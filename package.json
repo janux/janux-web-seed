@@ -1,0 +1,31 @@
+{
+	"author": "Philippe Paravicini",
+	"name": "janux-web-seed",
+	"homepage": "https://github.com/janux/janux-web-seed",
+	"version": "0.0.1-SNAPSHOT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:janux/janux-web-seed.git"
+	},
+	"bugs": {
+		"url": "https://github.com/janux/janux-web-seed/issues"
+	},
+	"licenses": [
+		{
+			"type": "Apache 2.0",
+			"url": "https://raw.github.com/janux/janux-web-seed/master/LICENSE"
+		}
+	],
+	"engines": {
+		"node": ">= 0.8.4"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"grunt":                    "~0.4.1",
+		"grunt-contrib-clean":      "~0.5.0",
+		"grunt-contrib-copy":       "~0.4.1",
+    "load-grunt-config":        "~0.7.1",
+    "load-grunt-tasks":         "~0.2.0",
+    "time-grunt":               "~0.2.0"
+	}
+}

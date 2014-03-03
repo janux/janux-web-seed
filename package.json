@@ -26,6 +26,10 @@
 		"grunt-contrib-copy":       "~0.4.1",
     "load-grunt-config":        "~0.7.1",
     "load-grunt-tasks":         "~0.2.0",
-    "time-grunt":               "~0.2.0"
+    "time-grunt":               "~0.2.0",
+
+    "gulp":                     "~3.5.0",
+    "gulp-load-plugins":        "~0.3.0",
+    "gulp-clean":               "~0.2.4"
 	}
 }

@@ -2,41 +2,33 @@
 
 var gulp = require('gulp');
 
-// Load plugins
-var task = require('gulp-load-plugins')();
 
-var config = {
+// Load plugins
+var plugins = require('gulp-load-plugins')();
+
+var cfg = {
 	dir: {
 		src:  'src',
 		dist: 'dist',
 		test: 'test'
-	}
+	},
+  plugins: plugins
 }; 
 
-var dir = config.dir;
+//
+// Load all the tasks that are defined in the 'gulp' folder.  For now this is manual, but this
+// mechanism could be enhanced into a plugin that load all tasks defined in the 'gulp' sub-folder
+//
+['compile','connect'].forEach( function(taskName) {
+	require('./gulp/'+taskName)(gulp, cfg);
+});
 
 // Clean
 gulp.task('clean', function () {
 	return gulp.src([
-		dir.dist
+		cfg.dir.dist
 	], {read: false})
-	.pipe(task.clean());
-});
-
-gulp.task('compile', function() {
-	console.log('compiling assets...');
-	gulp.src(
-		[
-			'*.{ico,png,txt}',
-			'.htaccess',
-			'img/**/*.*',
-			'{,*/}*.html',
-			'css/font/*.*'
-		], {
-			cwd:  dir.src,
-			base: dir.src + '/'
-		}
-	).pipe(gulp.dest(dir.dist));
+	.pipe(cfg.plugins.clean());
 });
 
 // this ensures that 'clean' is run before compile; otherwise, both tasks run concurrently 
@@ -46,10 +38,3 @@ gulp.task('build', ['clean'], function() {
 });
 
 gulp.task('default', ['build']);
-
-// Default task
-/*
-gulp.task('default', ['clean'], function () {
-	gulp.start('build');
-});
-*/

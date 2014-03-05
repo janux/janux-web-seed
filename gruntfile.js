@@ -14,7 +14,9 @@ module.exports = function (grunt) {
 		init: true,
 		config: {
 			dir: {
+				css:  'css',
 				dist: 'dist',
+				img:  'img',
 				src:  'src',
 				tmp: '.tmp',
 				test: 'test',
@@ -42,9 +44,14 @@ module.exports = function (grunt) {
 		'compile'
 	]);
 
-	grunt.registerTask('serve', 'serves site from src folder', [
-		'connect:livereload:keepalive',
+	grunt.registerTask('serve', 'serves site locally without packaging it', [
+		'clean:server',
+		'concurrent:server',
+		'connect:livereload',
+		'watch'
 	]);
+
+	// 'connect:livereload:keepalive' // if calling connect last (without watch)
 
 	grunt.registerTask('default', 'runs build for now', ['build']);
 

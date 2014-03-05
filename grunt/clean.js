@@ -7,8 +7,7 @@ module.exports = {
 			dot: true,
 			src: [
 				'<%=  dir.tmp %>',
-				'<%=  dir.dist %>/*',
-				'!<%= dir.dist %>/*.git'
+				'<%=  dir.dist %>'
 			]
 		}]
 	},

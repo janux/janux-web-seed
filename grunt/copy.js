@@ -2,6 +2,13 @@
 // copy
 //
 module.exports = {
+	styles: {
+		expand: true,
+		dot: true,
+		cwd:  '<%= dir.src %>/<%= dir.css %>',
+		dest: '<%= dir.tmp %>/<%= dir.css %>',
+		src:  ['**/*.css', 'font/**/*.*']
+	},
 	dist: {
 		files: [{
 			expand: true,

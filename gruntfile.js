@@ -42,6 +42,10 @@ module.exports = function (grunt) {
 		'compile'
 	]);
 
+	grunt.registerTask('serve', 'serves site from src folder', [
+		'connect:livereload:keepalive',
+	]);
+
 	grunt.registerTask('default', 'runs build for now', ['build']);
 
 };

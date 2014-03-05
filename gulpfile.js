@@ -37,4 +37,6 @@ gulp.task('build', ['clean'], function() {
 	gulp.start('compile');
 });
 
+gulp.task('serve', ['connect']);
+
 gulp.task('default', ['build']);

@@ -1,0 +1,57 @@
+@color-sage:     #96a260;
+@color-sageDark: hsl(70, 25%, 40%); // #747c4a
+@color-grey:     #ccc;
+
+p {
+	margin-bottom: 1em;
+}
+	
+
+.canvas {
+	max-width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+/* =branding */
+h1.branding {
+	padding-top:.7em;
+	margin-bottom:0;
+	font-weight:normal;
+	font-size:1.75em;
+	text-align:left;
+	font-family: Base9_SmallCaps;
+	letter-spacing: .08em;
+}
+
+.logo {
+}
+
+.logo img {
+	padding:.7em;
+	vertical-align:middle;
+	height: 4.50em;
+}
+
+.masthead {
+	padding-top:.7em;
+	height: 6em;
+	// .debug_border();
+}
+
+
+span.janux {
+	padding-right: .2em;
+	color: @color-grey;
+}
+
+span.people {
+	color: @color-sageDark;
+}
+
+.sidebar {
+}
+
+.debug_border(@color: black) {
+	border: solid 1px @color;
+}

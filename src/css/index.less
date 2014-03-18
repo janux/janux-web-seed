@@ -1,6 +1,6 @@
 /* the main css file */
 
-@import "variable.less";  // easy layer of customization here
+@import "variable.less";
 @import "mixin.less";
 
 // resets
@@ -12,16 +12,21 @@
 @import "entypo.less";
 @import "font.less";
 
+@import "semantic-grid/stylesheets/less/grid.less"; // from bower
+
 /*  
  * This would be the way to import the file from the vendor folder:
+
+ *   @import (less) 'pure/pure.css';
+
  * - the (less) keyword forces less to treat the file as a less file, and will thus inline it into
  *   the resulting css files
  * - the pb with this syntax is that gulp-recess complains and issues a linting error
  * For the time being we are renaming pure.css to src/css/pure/pure.less as a workaround
  */
-// @import (less) 'pure/pure.css';
 
 @import 'pure/pure.less';
 
 // temporary: existing styles from the janux site
+@import 'janux-layout.less';
 @import 'janux.less';

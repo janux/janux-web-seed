@@ -10,7 +10,7 @@ module.exports = function(gulp, cfg) {
 
 			.pipe(cfg.plugins.recess({
 				//
-				// includePath: ['vendor'], // search for imports here
+				includePath: ['bower'], // search for imports here
 				//
 				// The following lint checks were turned off because the pure.less file was issuing errors
 				// with it, and we don't want to modify the pure.css source
@@ -22,7 +22,7 @@ module.exports = function(gulp, cfg) {
 			}).on('error', console.log))
 
 			.pipe(cfg.plugins.less({
-				paths: ['vendor'] // search for imports here; less will use to reference a library simply and relatively in less files
+				paths: ['bower'] // search for imports here; less will use to reference a library simply and relatively in less files
 			}))
 
 			// name destination file with the 'name' attribute in the package.json file

@@ -21,7 +21,7 @@ var cfg = {
 		test: 'test'
 	},
 	pkg:     pkg,
-  plugins: plugins,
+  plugins: plugins
 }; 
 
 //

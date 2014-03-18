@@ -2,9 +2,8 @@
   "name": "janux-web-seed",
   "version": "0.0.1-SNAPSHOT",
   "dependencies": {
-    "pure": "~0.4.2",
-    "modernizr": "~2.6.2",
     "normalize.css": "~3.0.0",
-  },
-  "devDependencies": {}
+    "pure":          "~0.4.2",
+    "semantic-grid": "*"
+  }
 }

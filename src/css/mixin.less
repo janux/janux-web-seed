@@ -1,0 +1,14 @@
+.font-face(@family, @font-weight:normal, @font-style:normal, @path:@font-path) {
+	@font-face {
+		font-family: '@{family}';
+		src: url('@{path}/@{family}.eot');
+		src:
+			url('@{path}/@{family}/@{family}.ttf')  format('truetype'),
+			url('@{path}/@{family}/@{family}.woff') format('woff'),
+			url('@{path}/@{family}/@{family}.svg')  format('svg'),
+			url('@{path}/@{family}/@{family}.eot?#iefix') format('embedded-opentype'),
+		;
+		font-weight: @font-weight;
+		font-style:  @font-style;
+	}
+}

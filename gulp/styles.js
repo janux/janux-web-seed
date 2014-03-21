@@ -1,13 +1,16 @@
 'use strict';
 //
-// styles
+// styles2
 //
+
+var path = require('path');
+
 module.exports = function(gulp, cfg) {
 
 	gulp.task('styles', function() {
 
 		var lessOpts = {
-			paths: [cfg.dir.bower] // search for imports here; less will use to reference a library simply and relatively in less files
+			paths: [cfg.dir.bower] // search for imports here
 		};
 
 		var recessOpts = {
@@ -21,15 +24,22 @@ module.exports = function(gulp, cfg) {
 			// ,strictPropertyOrder:  false,  // do not complain about properties out of order
 			// noOverqualifying:     false, // do not complain about overqualifying selectors div#foo.bar
 			// zeroUnits:            false, // do not complain about adding units to values of 0
-			// noUniversalSelectors: false  // do not complain about using the universal * selector
+			// noUniversalSelectors: false // do not complain about using the universal * selector
 		};
 
-		gulp.src(cfg.dir.css + '/index.less')
+		gulp.src([
+			'typography.less',
+			'layout.less',
+			'main.less'
+			],{
+				cwd:  cfg.dir.css,
+				base: path.join(cfg.dir.src, '/')
+			})
 			.pipe(cfg.plugins.recess(recessOpts).on('error', console.log))
 			.pipe(cfg.plugins.less(lessOpts))
 
 			// name destination file with the 'name' attribute in the package.json file
-			.pipe(cfg.plugins.concat(cfg.pkg.name + '.css'))
+			// .pipe(cfg.plugins.concat(cfg.pkg.name + '.css'))
 
 			.pipe(gulp.dest(cfg.dir.dist))
 			.pipe(cfg.plugins.size());

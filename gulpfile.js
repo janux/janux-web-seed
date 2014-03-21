@@ -26,8 +26,9 @@ var cfg = {
 }; 
 
 //
-// Load all the tasks that are defined in the 'gulp' folder.  For now this is manual, but this
-// mechanism could be enhanced into a plugin that load all tasks defined in the 'gulp' sub-folder
+// Load all the tasks that are defined in the 'gulp' folder.  For now this is
+// manual, but this mechanism could be enhanced into a plugin that load all
+// tasks defined in the 'gulp' sub-folder
 //
 ['clean','copy','connect','styles','watch'].forEach( function(taskName) {
 	require('./gulp/'+taskName)(gulp, cfg);

@@ -11,15 +11,17 @@ module.exports = function(gulp, cfg) {
 		};
 
 		var recessOpts = {
-			includePath: [cfg.dir.bower], // search for imports here
+			includePath: [cfg.dir.bower] // search for imports here
 			//
-			// The following lint checks were turned off because the pure.less file was issuing errors
-			// with it, and we don't want to modify the pure.css source
+			// Uncomment these options if you want recess to issue less warnings;
+			// in particular, the strictPropertyOrder is a twitter convention that can
+			// be quite verbose if applied to a stylesheet that was not authored with
+			// this convention
 			//
-			noOverqualifying:     false, // do not complain about overqualifying selectors div#foo.bar
-			zeroUnits:            false, // do not complain about adding units to values of 0
-			noUniversalSelectors: false, // do not complain about using the universal * selector
-			strictPropertyOrder:  false  // do not complain about properties out of order
+			// ,strictPropertyOrder:  false,  // do not complain about properties out of order
+			// noOverqualifying:     false, // do not complain about overqualifying selectors div#foo.bar
+			// zeroUnits:            false, // do not complain about adding units to values of 0
+			// noUniversalSelectors: false  // do not complain about using the universal * selector
 		};
 
 		gulp.src(cfg.dir.css + '/index.less')

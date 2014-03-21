@@ -1,0 +1,63 @@
+//////////
+// GRID //
+//////////
+
+// Specify the number of columns and set column and gutter widths
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
+
+// Remove the definition below for a pixel-based layout
+@total-width: 100%;
+
+
+////////////
+// LAYOUT //
+////////////
+
+// header
+.top {
+	margin-bottom: 1em;
+}
+
+.logo {
+	.column(2);
+	// .push(1);
+}
+
+
+.masthead {
+	.column(10);
+}
+
+// main column & sidebar
+.maincolumn {
+	.column(10);
+}
+
+.sidebar {
+	.column(2);
+}
+
+.canvas {
+	max-width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+	.logo, .sidebar {
+		.column(3)
+	}
+	.masthead, .maincolumn {
+		.column(9)
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.maincolumn,
+	.sidebar {
+		.column(12);
+		margin-bottom: 1em;
+	}
+}

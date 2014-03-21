@@ -1,7 +1,7 @@
 'use strict';
 
-var gulp = require('gulp');
-
+var gulp = require('gulp'),
+  path = require('path');
 
 // Load plugins
 var 
@@ -13,11 +13,12 @@ var src = 'src';
 
 var cfg = {
 	dir: {
-		src:  src,
-		css:  src + '/css',
-		dist: 'dist',
-		img:  src + '/img',
-		js:   src + '/js',
+		src:   src,
+		bower: path.join(src, 'bower'),
+		css:   path.join(src, 'css'),
+		dist:  'dist',
+		img:   path.join(src, 'img'),
+		js:    path.join(src, 'js'),
 		test: 'test'
 	},
 	pkg:     pkg,

@@ -21,6 +21,9 @@ var cfg = {
 		js:    path.join(src, 'js'),
 		test: 'test'
 	},
+	file: {
+		jade:  path.join(src, '/**/*.jade')
+	},
 	pkg:     pkg,
   plugins: plugins
 }; 
@@ -30,14 +33,14 @@ var cfg = {
 // manual, but this mechanism could be enhanced into a plugin that load all
 // tasks defined in the 'gulp' sub-folder
 //
-['clean','copy','connect','styles','watch'].forEach( function(taskName) {
+['clean','copy','connect','jade','styles','watch'].forEach( function(taskName) {
 	require('./gulp/'+taskName)(gulp, cfg);
 });
 
 //
 // Process all assets for development
 //
-gulp.task('compile', ['styles']);
+gulp.task('compile', ['styles', 'jade']);
 
 //
 // Does a clean dev build 

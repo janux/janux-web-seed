@@ -8,6 +8,7 @@ module.exports = function(gulp, cfg) {
 			gulp.watch([
 					cfg.dir.src + '/*.html',
 					cfg.dir.dist + '/*.css',
+					cfg.dir.dist + '/*.html',
 					cfg.dir.js  + '/**/*.js',
 					cfg.dir.img + '/**/*'
 			], cfg.plugins.connect.reload);
@@ -21,6 +22,8 @@ module.exports = function(gulp, cfg) {
 			// Watch .less files
 			// gulp.watch('app/styles/**/*.scss', ['styles']);
 			gulp.watch( cfg.dir.css + '/*.less', ['styles']);
+
+			gulp.watch( cfg.file.jade, ['jade']);
 
 			/*
 			gulp.watch( cfg.dir.src + '/index.html', function() {

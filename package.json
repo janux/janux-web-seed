@@ -36,6 +36,7 @@
 		"gulp-clean":            "^0.2.4",
 		"gulp-concat":           "^2.1.7",
 		"gulp-connect":          "^1.0.6",
+    "gulp-jade":             "^0.4.2"
 		"gulp-less":             "^1.2.2",
 		"gulp-recess":           "^0.2.0",
 		"gulp-size":             "^0.1.3",

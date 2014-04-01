@@ -3,40 +3,40 @@
 // Watch
 //
 module.exports = function(gulp, cfg) {
-	gulp.task('watch',['connect'], function () {
-			// Watch for changes that change during dev
-			gulp.watch([
-					cfg.dir.src + '/*.html',
-					cfg.dir.dist + '/*.css',
-					cfg.dir.dist + '/*.html',
-					cfg.dir.js  + '/**/*.js',
-					cfg.dir.img + '/**/*'
-			], cfg.plugins.connect.reload);
-			/*
-			], function() {
-				console.log('watch triggered, reloading page');
-				cfg.plugins.connect.reload();
-			});
-			*/
-			
-			// Watch .less files
-			// gulp.watch('app/styles/**/*.scss', ['styles']);
-			gulp.watch( cfg.dir.css + '/*.less', ['styles']);
 
-			gulp.watch( cfg.file.jade, ['jade']);
+	gulp.task('watch:clean', ['clean'], function() {
+		gulp.start('watch');
+	});
 
-			/*
-			gulp.watch( cfg.dir.src + '/index.html', function() {
-				console.log('index.html file changed');
-			});
-			*/
+	gulp.task('watch',['build','connect-reload'], function () {
 
-			// Watch .js files
-			// gulp.watch('app/scripts/**/*.js', ['scripts']);
-			// gulp.watch( cfg.dir.js + '/**/*.js', ['scripts']);
+		// Watch for changes that change during dev
+		gulp.watch([
+				cfg.dir.dist + '/*.html',
+				cfg.dir.dist + '/*.css',
+				cfg.dir.src + '/*.html',
+				cfg.dir.js  + '/**/*.js',
+				cfg.dir.img + '/**/*'
+		], function(event) {
+			// console.log('watch triggered:', event );
+			gulp.src(event.path).pipe(cfg.plugins.connect.reload());
+		});
 
-			// Watch image files
-			// gulp.watch('app/images/**/*', ['images']);
-			// gulp.watch( cfg.dir.img + '/**/*', ['images']);
+		// gulp.watch( 'dist/**/*', function(event) {
+		//		console.log('event: ', event);
+		// });
+		
+		// Watch .less files
+		gulp.watch( cfg.dir.css + '/*.less', ['styles']);
+
+		gulp.watch( cfg.fileset.jade, ['jade']);
+
+		// Watch .js files
+		// gulp.watch('app/scripts/**/*.js', ['scripts']);
+		// gulp.watch( cfg.dir.js + '/**/*.js', ['scripts']);
+
+		// Watch image files
+		// gulp.watch('app/images/**/*', ['images']);
+		// gulp.watch( cfg.dir.img + '/**/*', ['images']);
 	});
 }

@@ -21,7 +21,7 @@ var cfg = {
 		js:    path.join(src, 'js'),
 		test: 'test'
 	},
-	file: {
+	fileset: {
 		jade:  path.join(src, '/**/*.jade')
 	},
 	pkg:     pkg,
@@ -40,26 +40,30 @@ var cfg = {
 //
 // Process all assets for development
 //
-gulp.task('compile', ['styles', 'jade']);
+gulp.task('build', ['styles', 'jade']);
 
 //
 // Does a clean dev build 
 //
-// this ensures that 'clean' is run before compile; otherwise, 
+// this ensures that 'clean' is run before build; otherwise, 
 // both tasks run concurrently and errors may occur
-gulp.task('build', ['clean'], function() {
-	gulp.start('compile');
+//
+gulp.task('build:clean', ['clean'], function() {
+	gulp.start('build');
 });
 
+
 //
-// Builds and runs for development
+// Builds and runs a server without reloading or opening a browser window,
+// useful if you want to build via the command line and don't want to keep
+// closing new browser windows, or reloading on every change
 //
-gulp.task('serve', ['build'], function() {
-	gulp.start('watch');
+gulp.task('serve', ['build:clean'], function() {
+	gulp.start('connect');
 });
 
 // Alias for 'serve'
 gulp.task('server',['serve']);
 
 // Simply build by default
-gulp.task('default', ['build']);
+gulp.task('default', ['build:clean']);

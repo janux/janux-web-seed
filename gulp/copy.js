@@ -1,9 +1,14 @@
 'use strict';
-
+//
+// copy
+//
+// This task is kept for illustration purposes, 
+// it is not used at this time (2014-03-31)
+//
 module.exports = function(gulp, cfg) {
 	
-	gulp.task('compile', function() {
-		console.log('compiling assets...');
+	gulp.task('copy', function() {
+		console.log('copying assets...');
 		gulp.src(
 			[
 				'*.{ico,png,txt}',

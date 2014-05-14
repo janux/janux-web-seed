@@ -14,22 +14,28 @@ html
 
 	body
 		.canvas
-			.logo
-				img(src='img/janux-sage-256.png') 
-
 			.masthead
-				a(id='what-is-janux')
-				h1.branding 
+				.logo
+					img(src='img/janux-sage-256.png') 
+
+				//
+					.masthead
+						h1.branding 
+							span.janux janux 
+							span.people people
+						a(id='what-is-janux')
+
+				.branding
 					span.janux janux 
 					span.people people
+				a(id='what-is-janux')
 
-
-			.section.sidebar
+			section.sidebar
 
 				block sidebar
 					include sidenav
 
-			.maincolumn
+			section.maincolumn
 
 				block main-content
 				block footer

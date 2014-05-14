@@ -28,7 +28,7 @@ module.exports = function(gulp, cfg) {
 				data:   data,
 				debug:  false,
 				pretty: true
-			}))
+			}).on('error', function(err){})) // prevent watch from being interrupted
 		.pipe(gulp.dest(cfg.dir.dist));
 	});
 };

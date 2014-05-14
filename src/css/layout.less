@@ -1,19 +1,45 @@
 @import "semantic-grid/stylesheets/less/grid.less"; // from bower
-@import "variable.less";
+@import "mixin";
+@import "variable";
 
-// header
-.top {
-	margin-bottom: 1em;
+.masthead {
+	.column(12);
+	// background: white;
+	height: auto;
 }
 
 .logo {
 	.column(2);
-	// .push(1);
+	// background: @blueLight;
 }
 
-.masthead {
-	.column(10);
+.logo img {
+	height: 4.5em;
+	vertical-align:middle;
 }
+
+.branding {
+	.column(10);
+	// height: 4.5em;
+	padding-top:.7em;
+	margin-bottom:0;
+	font-family: Base9_SmallCaps;
+	font-size:1.75em;
+	font-weight:normal;
+	letter-spacing: .08em;
+	text-align:left;
+	// background: @blueLight;
+	.janux {
+		padding-right: .2em;
+		color: @grey;
+	}
+
+	.people {
+		color: @sageDark;
+	}
+}
+
+
 
 // main column & sidebar
 .maincolumn {
@@ -22,27 +48,51 @@
 
 .sidebar {
 	.column(2);
+	// background-color: @grey;
 }
 
 .canvas {
 	max-width: 960px;
 	margin: 0 auto;
 	overflow: hidden;
+	background-color: @sageLight;
 }
 
 @media screen and (max-width: 768px) {
 	.logo, .sidebar {
 		.column(3)
 	}
-	.masthead, .maincolumn {
+	.maincolumn, .branding {
 		.column(9)
 	}
 }
 
 @media screen and (max-width: 380px) {
-	.maincolumn,
-	.sidebar {
+	.masthead {
+		height: 2.50em;
+	}
+
+	.logo {
+		.column(2)
+	}
+
+	.logo img {
+		height: 2.5em;
+		padding: 0.25em;
+	}
+
+	.branding {
+		font-size: 1.15em;
+		.column(10);
+		.janux {
+			padding-left: .5em;
+		}
+	}
+
+	.maincolumn, .sidebar {
 		.column(12);
 		margin-bottom: 1em;
 	}
+	
+
 }

@@ -1,6 +1,4 @@
-@color-sage:     #96a260;
-@color-sageDark: hsl(70, 25%, 40%); // #747c4a
-@color-grey:     #ccc;
+@import "variable.less";
 
 body {
 	font-family: 'Radley', serif;
@@ -16,13 +14,8 @@ p {
 }
 	
 
-.canvas {
-	max-width: 960px;
-	margin: 0 auto;
-	overflow: hidden;
-}
-
 /* =branding */
+/*
 .branding {
 	padding-top:.7em;
 	margin-bottom:0;
@@ -32,35 +25,5 @@ p {
 	letter-spacing: .08em;
 	text-align:left;
 }
+*/
 
-.logo {
-}
-
-.logo img {
-	height: 4.50em;
-	padding:.7em;
-	vertical-align:middle;
-}
-
-.masthead {
-	height: 6em;
-	padding-top:.7em;
-	// .debug_border();
-}
-
-
-.janux {
-	padding-right: .2em;
-	color: @color-grey;
-}
-
-.people {
-	color: @color-sageDark;
-}
-
-.sidebar {
-}
-
-.debug_border(@color: black) {
-	border: solid 1px @color;
-}

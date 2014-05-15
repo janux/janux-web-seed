@@ -10,18 +10,18 @@ module.exports = function(gulp, cfg) {
 
 	gulp.task('watch',['build','connect-reload'], function () {
 
+		var watched = [
+			cfg.dir.dist + '/*.html',
+			cfg.dir.dist + '/**/*.css',
+			cfg.dir.src + '/*.html',
+			cfg.dir.js  + '/**/*.js',
+			cfg.dir.img + '/**/*'
+		];
+
 		// Watch for changes that change during dev
-		gulp.watch([
-				cfg.dir.dist + '/*.html',
-				cfg.dir.dist + '/css/*.css',
-				cfg.dir.src + '/*.html',
-				cfg.dir.js  + '/**/*.js',
-				cfg.dir.img + '/**/*'
-		], {
-			debounceDelay: 50
-		},function(event) {
-			// console.log('watch triggered:', event );
-			gulp.src(event.path).pipe(cfg.plugins.connect.reload());
+		gulp.watch(watched, {debounceDelay: 250}, function(event) {
+			console.log('watch triggered:', event );
+			gulp.src(cfg.dir.dist + '/*.html').pipe(cfg.plugins.connect.reload());
 		});
 
 		// gulp.watch( 'dist/**/*', function(event) {

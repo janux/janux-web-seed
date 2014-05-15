@@ -13,19 +13,12 @@ module.exports = function(gulp, cfg) {
 		livereload: false
 	};
 
-	// Warning: The configuration below does not work, because the 'config' object
-	// is stored as a singleton inside the gulp-connect module, so the last config
-	// always wins; presumably this will be changed in an upcoming version of
-	// gulp-connect
+	var configReload = _.assign(config, {
+		livereload: true,
+	});
 
-	gulp.task('connect', cfg.plugins.connect.server(config));
 
-	gulp.task('connect-reload', cfg.plugins.connect.server(
-		_.assign(config, {
-			livereload: true,
-			open: {
-				file: 'index.html',
-			}
-		})
-	));
+	gulp.task('connect', function() {cfg.plugins.connect.server(config)});
+
+	gulp.task('connect-reload', function() {cfg.plugins.connect.server(configReload)});
 };

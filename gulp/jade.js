@@ -4,6 +4,8 @@
 // compiles jade templates into html
 //
 
+var gutil = require('gulp-util');
+
 module.exports = function(gulp, cfg) {
 
 	var path = require('path');
@@ -28,7 +30,7 @@ module.exports = function(gulp, cfg) {
 				data:   data,
 				debug:  false,
 				pretty: true
-			}).on('error', function(err){})) // prevent watch from being interrupted
+			}).on('error', function(err) { gutil.log(err)})) // don't interrupt gulp.watch
 		.pipe(gulp.dest(cfg.dir.dist));
 	});
 };

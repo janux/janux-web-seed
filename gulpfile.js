@@ -40,7 +40,7 @@ var cfg = {
 //
 // Process all assets for development
 //
-gulp.task('build', ['styles', 'jade']);
+gulp.task('build', ['styles', 'jade', 'copy']);
 
 //
 // Does a clean dev build 

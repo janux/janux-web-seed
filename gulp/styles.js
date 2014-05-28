@@ -30,13 +30,13 @@ module.exports = function(gulp, cfg) {
 		gulp.src([
 			'typography.less',
 			'layout.less',
-			'main.less',
+			'main.less'
 			],{
 				cwd:  cfg.dir.css,
 				base: path.join(cfg.dir.src, '/')
 			})
-			.pipe(cfg.plugins.recess(recessOpts).on('error', function(err) {console.log(err)}))
 			.pipe(cfg.plugins.less(lessOpts).on('error', console.log))
+			.pipe(cfg.plugins.recess(recessOpts).on('error', function(err) {console.log(err)}))
 
 			// name destination file with the 'name' attribute in the package.json file
 			// .pipe(cfg.plugins.concat(cfg.pkg.name + '.css'))

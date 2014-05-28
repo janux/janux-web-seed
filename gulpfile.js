@@ -65,5 +65,13 @@ gulp.task('serve', ['build:clean'], function() {
 // Alias for 'serve'
 gulp.task('server',['serve']);
 
+//
+// Builds and runs from the dist folder only, to smoketest packaged app
+//
+gulp.task('serve:dist', ['build:clean'], function() {
+	gulp.start('connect-dist');
+});
+
+
 // Simply build by default
 gulp.task('default', ['build:clean']);

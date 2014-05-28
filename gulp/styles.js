@@ -37,6 +37,7 @@ module.exports = function(gulp, cfg) {
 			})
 			.pipe(cfg.plugins.less(lessOpts).on('error', console.log))
 			.pipe(cfg.plugins.recess(recessOpts).on('error', function(err) {console.log(err)}))
+			.pipe(cfg.plugins.autoprefixer('last 1 version'))
 
 			// name destination file with the 'name' attribute in the package.json file
 			// .pipe(cfg.plugins.concat(cfg.pkg.name + '.css'))

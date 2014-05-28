@@ -19,7 +19,7 @@ module.exports = function(gulp, cfg) {
 		gulp.src(
 			[
 				'**/*.jade',
-				'!**/include/*',
+				'!**/view/*',
 				'!zTrash/**/*'
 			], {
 				cwd:  cfg.dir.src,

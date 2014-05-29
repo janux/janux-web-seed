@@ -29,8 +29,8 @@ module.exports = function(gulp, cfg) {
 
 		gulp.src([
 			'typography.less',
+			'util.less',
 			'layout.less',
-			'main.less'
 			],{
 				cwd:  cfg.dir.css,
 				base: path.join(cfg.dir.src, '/')

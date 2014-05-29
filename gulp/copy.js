@@ -16,6 +16,7 @@ module.exports = function(gulp, cfg) {
 			[
 				'img/**/*.*',
 				'css/font/**/*.*',
+				'css/icon/**/*.*',
 				'!**/*.less'
 			], {
 				cwd:  cfg.dir.src,

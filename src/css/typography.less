@@ -1,9 +1,52 @@
-@import "variable.less";
-@import "mixin.less";
+@import "variable";
+@import "mixin";
 
-@import "print.less";
+.font-face('Base9_SmallCaps');
+@import url('http://fonts.googleapis.com/css?family=Radley:400,400italic');
 
-// font
-@import "icon/glyphicons/glyphicons.less";
-@import "icon/entypo/entypo.less";
-@import "font.less";
+// .woff-font(ProximaNova, normal, normal, @font-path, ProximaNova-Regular);
+// .woff-font(ProximaNova, 300,    normal, @font-path, ProximaNova-Light);
+// .woff-font(ProximaNova, 500,    normal, @font-path, ProximaNova-Semibold);
+// .woff-font(ProximaNova, bold,   normal, @font-path, ProximaNova-Bold);
+
+html {
+	//
+	// causes 1 rem = 10px
+  //
+	// that is: a root em to be equal to 10px on all browsers in which:
+	//
+	// font-size: 100% yields a screen font size of 16px,
+	// on normal density displays
+	//
+	// see http://snook.ca/archives/html_and_css/font-size-with-rem
+	//
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Radley', serif;
+
+	//
+	// This yields the css line:
+	//
+	// font-size: 20px; font-size: 2rem;
+	//
+	// The first declaration provides support for browsers that do not support rem's
+	// see http://snook.ca/archives/html_and_css/font-size-with-rem
+	//
+	.rem(font-size, 16);
+}
+
+h1 {
+	font-weight: normal;
+	.rem(font-size, 24);
+}
+
+h2 {
+	.rem(font-size, 18);
+}	
+
+p, li {
+	line-height: 150%;
+	.rem(margin-bottom, 16);
+}

@@ -2,12 +2,21 @@
 @import "mixin";
 
 .font-face('Base9_SmallCaps');
-@import url('http://fonts.googleapis.com/css?family=Radley:400,400italic');
+// @import url('http://fonts.googleapis.com/css?family=Radley:400,400italic');
 
-// .woff-font(ProximaNova, normal, normal, @font-path, ProximaNova-Regular);
-// .woff-font(ProximaNova, 300,    normal, @font-path, ProximaNova-Light);
-// .woff-font(ProximaNova, 500,    normal, @font-path, ProximaNova-Semibold);
-// .woff-font(ProximaNova, bold,   normal, @font-path, ProximaNova-Bold);
+.woff-font(LiberationSans, normal, normal, @font-path, LiberationSans);
+.woff-font(LiberationSans, normal, italic, @font-path, LiberationSans-Italic);
+.woff-font(LiberationSans, bold,   normal, @font-path, LiberationSans-Bold);
+.woff-font(LiberationSans, bold,   italic, @font-path, LiberationSans-BoldItalic);
+
+.woff-font(LiberationSerif, normal, normal, @font-path, LiberationSerif);
+.woff-font(LiberationSerif, normal, italic, @font-path, LiberationSerif-Italic);
+.woff-font(LiberationSerif, bold,   normal, @font-path, LiberationSerif-Bold);
+.woff-font(LiberationSerif, bold,   italic, @font-path, LiberationSerif-BoldItalic);
+
+@font-sans:  'LiberationSans';
+@font-serif: 'LiberationSerif';
+
 
 html {
 	//
@@ -24,7 +33,7 @@ html {
 }
 
 body {
-	font-family: 'Radley', serif;
+	font-family: @font-serif, serif;
 
 	//
 	// This yields the css line:
@@ -37,13 +46,17 @@ body {
 	.rem(font-size, 16);
 }
 
+h1, h2 {
+	font-family: @font-sans, sans-serif;
+}
+
 h1 {
-	font-weight: normal;
-	.rem(font-size, 24);
+	.rem(font-size, 32);
+	text-transform: uppercase;
 }
 
 h2 {
-	.rem(font-size, 18);
+	.rem(font-size, 24);
 }	
 
 p, li {

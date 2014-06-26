@@ -4,18 +4,25 @@
 .font-face('Base9_SmallCaps');
 // @import url('http://fonts.googleapis.com/css?family=Radley:400,400italic');
 
-.woff-font(LiberationSans, normal, normal, @font-path, LiberationSans);
-.woff-font(LiberationSans, normal, italic, @font-path, LiberationSans-Italic);
-.woff-font(LiberationSans, bold,   normal, @font-path, LiberationSans-Bold);
-.woff-font(LiberationSans, bold,   italic, @font-path, LiberationSans-BoldItalic);
+.woff-font(OpenSans, normal, normal, @font-path, OpenSans-Regular);
+.woff-font(OpenSans, normal, italic, @font-path, OpenSans-Italic);
+.woff-font(OpenSans, bold,   normal, @font-path, OpenSans-Bold);
+.woff-font(OpenSans, bold,   italic, @font-path, OpenSans-BoldItalic);
 
-.woff-font(LiberationSerif, normal, normal, @font-path, LiberationSerif);
-.woff-font(LiberationSerif, normal, italic, @font-path, LiberationSerif-Italic);
-.woff-font(LiberationSerif, bold,   normal, @font-path, LiberationSerif-Bold);
-.woff-font(LiberationSerif, bold,   italic, @font-path, LiberationSerif-BoldItalic);
+.woff-font(OpenSans, 300,    normal, @font-path, OpenSans-Light);
+.woff-font(OpenSans, 300,    italic, @font-path, OpenSans-LightItalic);
+.woff-font(OpenSans, 600,    normal, @font-path, OpenSans-SemiBold);
+.woff-font(OpenSans, 600,    italic, @font-path, OpenSans-SemiBoldItalic);
+.woff-font(OpenSans, 800,    normal, @font-path, OpenSans-ExtraBold);
+.woff-font(OpenSans, 800,    italic, @font-path, OpenSans-ExtraBoldItalic);
 
-@font-sans:  'LiberationSans';
-@font-serif: 'LiberationSerif';
+.woff-font(DroidSerif, normal, normal, @font-path, DroidSerif-Regular);
+.woff-font(DroidSerif, normal, italic, @font-path, DroidSerif-Italic);
+.woff-font(DroidSerif, bold,   normal, @font-path, DroidSerif-Bold);
+.woff-font(DroidSerif, bold,   italic, @font-path, DroidSerif-BoldItalic);
+
+@font-sans:  'OpenSans';
+@font-serif: 'DroidSerif';
 
 
 html {
@@ -46,20 +53,32 @@ body {
 	.rem(font-size, 16);
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: @font-sans, sans-serif;
 }
 
 h1 {
-	.rem(font-size, 32);
+	.rem(font-size, 26);
 	text-transform: uppercase;
+	font-weight: 800;
 }
 
 h2 {
 	.rem(font-size, 24);
+	font-weight: bold;
+}	
+
+h3 {
+	.rem(font-size, 22);
+	font-weight: 600;
 }	
 
 p, li {
 	line-height: 150%;
 	.rem(margin-bottom, 16);
+}
+
+.light {
+	font-family: @font-sans;
+	font-weight: 300;
 }

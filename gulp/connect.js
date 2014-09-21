@@ -14,11 +14,11 @@ module.exports = function(gulp, cfg) {
 		livereload: false
 	};
 
-	var configReload = _.assign(config, {
+	var configReload = _.assign(_.cloneDeep(config), {
 		livereload: true
 	});
 
-	var configDist = _.assign(config, {
+	var configDist = _.assign(_.cloneDeep(config), {
 		root: cfg.dir.dist
 	});
 

@@ -20,7 +20,7 @@ module.exports = function(gulp, cfg) {
 
 		// Watch for changes that change during dev
 		gulp.watch(watched, {debounceDelay: 250}, function(event) {
-			console.log('watch triggered:', event );
+			// console.log('watch triggered:', event );
 			gulp.src(cfg.dir.dist + '/*.html').pipe(cfg.plugins.connect.reload());
 		});
 

@@ -22,7 +22,7 @@ var cfg = {
 		test: 'test'
 	},
 	fileset: {
-		jade:  path.join(src, '/**/*.jade')
+		jade:  path.join(src,'**','*.jade')
 	},
 	pkg:     pkg,
   plugins: plugins

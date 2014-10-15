@@ -22,6 +22,14 @@
 	}
 }
 
+//
+// This yields the css line:
+//
+// font-size: 20px; font-size: 2rem;
+//
+// The first declaration provides support for browsers that do not support rem's
+// see http://snook.ca/archives/html_and_css/font-size-with-rem
+//
 .rem(@attribute, @font-pixel-size, @conv-factor: 10) {
 	@{attribute}: unit(@font-pixel-size, px); 
 	@{attribute}: unit(@font-pixel-size / @conv-factor, rem);
@@ -37,4 +45,13 @@
 
 .debug_border(@color: black) {
 	border: solid 1px @color;
+}
+
+// 
+// Adds a 1px line of the color provided to a text style; this is intended for
+// cases where letters may be 'lost' in a background of the same color, for
+// example, white font on a light area of a photo
+//
+.text-border(@color: black) {
+	text-shadow: 1px 0 1px @color, -1px 0 1px @color, 0 1px 1px @color, 0 -1px 1px @color;
 }

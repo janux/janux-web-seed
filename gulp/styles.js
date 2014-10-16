@@ -21,19 +21,17 @@ module.exports = function(gulp, cfg) {
 			// be quite verbose if applied to a stylesheet that was not authored with
 			// this convention
 			//
-			,strictPropertyOrder:  false,  // do not complain about properties out of order
-			// noOverqualifying:     false, // do not complain about overqualifying selectors div#foo.bar
-			// zeroUnits:            false, // do not complain about adding units to values of 0
-			// noUniversalSelectors: false // do not complain about using the universal * selector
+			,strictPropertyOrder:  false  // do not complain about properties out of order
+			// ,noOverqualifying:     false // do not complain about overqualifying selectors div#foo.bar
+			// ,zeroUnits:            false // do not complain about adding units to values of 0
+			// ,noUniversalSelectors: false // do not complain about using the universal * selector
 		};
 
-		gulp.src([
-			'typography.less',
-			'util.less',
-			'layout.less',
-			],{
-				cwd:  cfg.dir.css,
-				base: path.join(cfg.dir.src, '/')
+		gulp.src(
+			cfg.fileset.less,
+			{
+				cwd:  path.join(cfg.dir.src, cfg.dir.css),
+				base: cfg.dir.src + path.sep
 			})
 			.pipe(cfg.plugins.less(lessOpts).on('error', console.log))
 			.pipe(cfg.plugins.recess(recessOpts).on('error', function(err) {console.log(err)}))

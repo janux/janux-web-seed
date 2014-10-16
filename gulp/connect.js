@@ -6,23 +6,20 @@ var _ = require('lodash');
 
 module.exports = function(gulp, cfg) {
 	
-	var config = {
-		root: [cfg.dir.src, cfg.dir.dist],
-		port: 9000,
-		host: '0.0.0.0',
-		open: false,
-		livereload: false
-	};
-
-	var configReload = _.assign(_.cloneDeep(config), {
+	var configReload = _.assign(_.cloneDeep(cfg.server), {
 		livereload: true
 	});
 
-	var configDist = _.assign(_.cloneDeep(config), {
+	var configDist = _.assign(_.cloneDeep(cfg.server), {
 		root: cfg.dir.dist
 	});
 
-	gulp.task('connect', function() {cfg.plugins.connect.server(config)});
+	// runs a connect dev server, without reloading
+	gulp.task('connect',        function() {cfg.plugins.connect.server(cfg.server)});
+
+	// runs a connect dev server with reloading, used in 'watch' target
 	gulp.task('connect-reload', function() {cfg.plugins.connect.server(configReload)});
-	gulp.task('connect-dist', function() {cfg.plugins.connect.server(configDist)});
+
+	// runs a connect server from dist, used to smoketest packaged app
+	gulp.task('connect-dist',   function() {cfg.plugins.connect.server(configDist)});
 };

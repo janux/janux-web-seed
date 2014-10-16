@@ -1,9 +1,16 @@
 'use strict';
 
 var gulp = require('gulp'),
-  path = require('path');
+  path = require('path'),
+	cfg  = require('config');
 
-// Load plugins
+// see config/default.js for the base configuration;
+// default.js is overridable via the standard 'config' mechanism.
+
+cfg.pkg     = require('./package.json');
+cfg.plugins = require('gulp-load-plugins')();
+
+/*
 var 
 	pkg     = require('./package.json'),
 	plugins = require('gulp-load-plugins')()
@@ -27,20 +34,21 @@ var cfg = {
 	pkg:     pkg,
   plugins: plugins
 }; 
+*/
 
 //
 // Load all the tasks that are defined in the 'gulp' folder.  For now this is
 // manual, but this mechanism could be enhanced into a plugin that load all
 // tasks defined in the 'gulp' sub-folder
 //
-['clean','copy','connect','jade','styles','watch'].forEach( function(taskName) {
+['clean','copy','connect','jade','scripts','styles','watch'].forEach( function(taskName) {
 	require('./gulp/'+taskName)(gulp, cfg);
 });
 
 //
 // Process all assets for development
 //
-gulp.task('build', ['styles', 'jade', 'copy']);
+gulp.task('build', ['styles','jade','scripts','copy']);
 
 //
 // Does a clean dev build 

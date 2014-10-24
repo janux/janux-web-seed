@@ -7,7 +7,8 @@ var path = require('path'),
 	gutil  = require('gulp-util');
 
 
-module.exports = function(gulp, cfg) {
+module.exports = function(gulp) {
+	var cfg = gulp.cfg;
 
 	//
 	// you can pass data that will be available in the templates here,
@@ -23,7 +24,7 @@ module.exports = function(gulp, cfg) {
 				base: cfg.dir.src + path.sep
 			}
 		)
-		.pipe(cfg.plugins.jade(cfg.jade)
+		.pipe(gulp.plugins.jade(cfg.jade)
 			.on('error', function(err) { gutil.log(err)})) // don't interrupt gulp.watch
 		.pipe(gulp.dest(cfg.dir.dist));
 	});

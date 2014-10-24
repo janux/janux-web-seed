@@ -5,7 +5,8 @@
 
 var path = require('path');
 
-module.exports = function(gulp, cfg) {
+module.exports = function(gulp) {
+	var cfg = gulp.cfg;
 
 	gulp.task('copy', function() {
 		console.log('copying assets...');

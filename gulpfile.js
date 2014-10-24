@@ -1,49 +1,29 @@
 'use strict';
 
-var gulp = require('gulp'),
-  path = require('path'),
-	cfg  = require('config');
+var gulp   = require('gulp'),
+  path     = require('path');
+
+if (!gulp.cfg) { 
+	gulp.cfg = require('config');
+} else {
+	// in the event that gulp decides to define a 'gulp.cfg' field
+	console.error("gulp.cfg is defined, cannot override!");
+	return;
+}
 
 // see config/default.js for the base configuration;
 // default.js is overridable via the standard 'config' mechanism.
 
-cfg.pkg     = require('./package.json');
-cfg.plugins = require('gulp-load-plugins')();
+gulp.cfg.pkg = require('./package.json');
+gulp.plugins = require('gulp-load-plugins')();
 
-/*
-var 
-	pkg     = require('./package.json'),
-	plugins = require('gulp-load-plugins')()
-;
 
-var src = 'src';
+// Load all the tasks that are defined in the 'gulp' folder.  
+var taskDir  = require('require-dir')('./gulp');
 
-var cfg = {
-	dir: {
-		src:   src,
-		bower: path.join(src, 'bower'),
-		css:   path.join(src, 'css'),
-		dist:  'dist',
-		img:   path.join(src, 'img'),
-		js:    path.join(src, 'js'),
-		test: 'test'
-	},
-	fileset: {
-		jade:  path.join(src,'**','*.jade')
-	},
-	pkg:     pkg,
-  plugins: plugins
-}; 
-*/
-
-//
-// Load all the tasks that are defined in the 'gulp' folder.  For now this is
-// manual, but this mechanism could be enhanced into a plugin that load all
-// tasks defined in the 'gulp' sub-folder
-//
-['clean','copy','connect','jade','scripts','styles','watch'].forEach( function(taskName) {
-	require('./gulp/'+taskName)(gulp, cfg);
-});
+for (var filename in taskDir) {
+	taskDir[filename](gulp);
+}
 
 //
 // Process all assets for development

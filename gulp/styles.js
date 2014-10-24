@@ -5,7 +5,8 @@
 
 var path = require('path');
 
-module.exports = function(gulp, cfg) {
+module.exports = function(gulp) {
+	var cfg = gulp.cfg;
 
 	gulp.task('styles', function() {
 
@@ -33,14 +34,14 @@ module.exports = function(gulp, cfg) {
 				cwd:  path.join(cfg.dir.src, cfg.dir.css),
 				base: cfg.dir.src + path.sep
 			})
-			.pipe(cfg.plugins.less(lessOpts).on('error', console.log))
-			.pipe(cfg.plugins.recess(recessOpts).on('error', function(err) {console.log(err)}))
-			.pipe(cfg.plugins.autoprefixer('last 1 version'))
+			.pipe(gulp.plugins.less(lessOpts).on('error', console.log))
+			.pipe(gulp.plugins.recess(recessOpts).on('error', function(err) {console.log(err)}))
+			.pipe(gulp.plugins.autoprefixer('last 1 version'))
 
 			// name destination file with the 'name' attribute in the package.json file
-			// .pipe(cfg.plugins.concat(cfg.pkg.name + '.css'))
+			// .pipe(gulp.plugins.concat(cfg.pkg.name + '.css'))
 
 			.pipe(gulp.dest(cfg.dir.dist))
-			.pipe(cfg.plugins.size());
+			.pipe(gulp.plugins.size());
 	});
 };

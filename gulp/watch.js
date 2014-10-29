@@ -26,7 +26,7 @@ module.exports = function(gulp) {
 		// });
 		
 		// Watch .less files
-		gulp.watch( cfg.dir.css + '/*.less', ['styles']);
+		gulp.watch( cfg.fileset.lessSrc, ['styles']);
 
 		gulp.watch( cfg.fileset.jade, ['jade']);
 

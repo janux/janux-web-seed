@@ -16,11 +16,16 @@ html
 			header
 				.logo
 					img(src='img/janux-sage-256.png') 
+					.branding
+						span.janux janux 
+						span.people people
 
-				.branding
-					span.janux janux 
-					span.people people
-				a(id='what-is-janux')
+			nav
+				ul
+					li.first: a(href='#accounts') Accounts
+					li: a(href='#roles') Roles
+					li: a(href='#perms') Permissions
+
 
 			section.sidebar
 

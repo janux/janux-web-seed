@@ -83,8 +83,26 @@ p, li {
 	font-weight: 300;
 }
 
+.auth {
+}
+
+.auth-status {
+	font-variant: small-caps;
+	text-transform: lowercase;
+	.rem(font-size, 18);
+	.rem(letter-spacing, 1);
+	font-weight: 600;
+	color: @sageDark;
+}
+
+.auth-user {
+	.rem(font-size, 14);
+	color: @grey1;
+}
+
 nav {
 	a, a:link, a:visited, a:hover {
+		.rem(font-size, 15);
 		font-weight: 600;
 		color: white;
 	 	text-decoration: none;

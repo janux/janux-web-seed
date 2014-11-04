@@ -45,19 +45,34 @@ header {
 	}
 }
 
+.auth {
+	display: inline;
+	float: right;
+	margin-right: 1.38888889%;
+}
+
+.auth-status {
+	float: right;
+	.rem(margin-top, 5);
+}
+
+.auth-user {
+	float: right;
+	clear: both;
+	.rem(margin-top, 15);
+}
+
 nav {
-	// float: left;
-	display: inline-block;
-	width: 100%;
-	.rem(height, 28);
-	background-color: @grey1;
-	text-align: center;
-	padding: 0;
 
 	ul {
+		float: left;
+		display: block;
+		width: 100%;
+		background-color: @grey1;
+		text-align: center;
 		list-style: none;
-		.rem(padding-top, 5);
-		.rem(padding-bottom, 5);
+		.rem(padding-top, 3);
+		.rem(padding-bottom, 3);
 		margin: 0;
 		-webkit-margin-before: 0;
 		-webkit-margin-after: 0;

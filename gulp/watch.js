@@ -16,7 +16,7 @@ module.exports = function(gulp) {
 	gulp.task('watch',['build','connect-reload'], function () {
 
 		// Watch for changes that change during dev
-		gulp.watch(cfg.fileset.watch, {debounceDelay: 250}, function(event) {
+		gulp.watch(cfg.fileset.watch, {debounceDelay: 1000}, function(event) {
 			// console.log('watch triggered:', event );
 			gulp.src(path.join(cfg.dir.dist,'*.html')).pipe(gulp.plugins.connect.reload());
 		});

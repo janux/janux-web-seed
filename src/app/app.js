@@ -26,21 +26,21 @@ angular.module('MyApp',[
 		// State Configuration
 		//
 		
-		$stateProvider.state("accounts", {
+		$stateProvider.state('accounts', {
 			// default state
-			url: "/",
-			template: "<h1>Accounts</h1>"
+			url: '/',
+			template: '<h1>Accounts</h1>'
 		})
 
-		.state("roles", {
-			url: "/roles",
-			template: "<h1>Roles</h1>"
+		.state('roles', {
+			url: '/roles',
+			template: '<h1>Roles</h1>'
 		})
 
-		.state("permissions", {
-			url: "/permissions",
-			template: "<h1>Permissions</h1>"
-		})
+		.state('permissions', {
+			url: '/permissions',
+			template: '<h1>Permissions</h1>'
+		});
 	}
 ]);
 

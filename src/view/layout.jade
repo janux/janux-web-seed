@@ -6,15 +6,15 @@ html(ng-app='MyApp')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 
 		
-		link(rel='stylesheet', href='css/normalize.css')
-		link(rel='stylesheet', href='css/typography.css')
-		link(rel='stylesheet', href='css/util.css')
-		link(rel='stylesheet', href='css/layout.css')
-		link(rel='stylesheet', href='css/responsive.css')
+		link(rel='stylesheet', href='#{cfg.dir.css}/normalize.css')
+		link(rel='stylesheet', href='#{cfg.dir.css}/typography.css')
+		link(rel='stylesheet', href='#{cfg.dir.css}/util.css')
+		link(rel='stylesheet', href='#{cfg.dir.css}/layout.css')
+		link(rel='stylesheet', href='#{cfg.dir.css}/responsive.css')
 
-		script(src='js/angular.js')
-		script(src='js/angular-ui-router.js')
-		script(src='js/app.js')
+		script(src='#{cfg.dir.lib}/angular.js')
+		script(src='#{cfg.dir.lib}/angular-ui-router.js')
+		script(src='#{cfg.dir.js}/app.js')
 
 	body
 		.container

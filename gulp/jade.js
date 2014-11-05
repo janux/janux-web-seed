@@ -14,7 +14,9 @@ module.exports = function(gulp) {
 	// you can pass data that will be available in the templates here,
 	// for example, a version number, or a dev/prod flag
 	//
-	cfg.jade.data = {someVar: 'hello World'};
+	cfg.jade.data = {
+		cfg: cfg
+	}
 	
 	gulp.task('jade', function() {
 		gulp.src( 

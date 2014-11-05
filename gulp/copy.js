@@ -22,7 +22,7 @@ module.exports = function(gulp) {
 		.pipe(gulp.dest(path.join(cfg.dir.dist, cfg.dir.css)));
 
 		gulp.src(cfg.fileset.jsLibs)
-		.pipe( gulp.dest(path.join(cfg.dir.dist, cfg.dir.js)) );
+		.pipe( gulp.dest(path.join(cfg.dir.dist, cfg.dir.lib)) );
 	});
 
 };

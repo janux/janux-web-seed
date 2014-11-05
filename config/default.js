@@ -43,7 +43,7 @@ cfg.fileset.watch = [
 cfg.fileset.assets = [
 	'favicon.ico',
 	path.join(cfg.dir.img,'**','*.*'),
-	path.join(cfg.dir.js, '**','*.*'),
+	path.join(cfg.dir.js, '**','*.js'),
 	path.join(cfg.dir.css,'font','**','*.*'),
 	path.join(cfg.dir.css,'icon','**','*.*'),
 	path.join('!**','*.less') 

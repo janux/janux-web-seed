@@ -2,11 +2,15 @@
 @import "mixin";
 @import "variable";
 
+html, body {
+	height: 100%;
+	background-color: @sageLight;
+}
+
 .container {
 	width: 100%;
 	margin: 0 auto;
 	overflow: hidden;
-	background-color: @sageLight;
 }
 
 header {
@@ -95,7 +99,7 @@ nav {
 
 // main column & sidebar
 .maincolumn {
-	.column(10);
+	.column(12);
 }
 
 .sidebar {

@@ -26,20 +26,20 @@ angular.module('MyApp',[
 		// State Configuration
 		//
 		
-		$stateProvider.state('accounts', {
+		$stateProvider.state('users', {
 			// default state
 			url: '/',
-			template: '<h1>Accounts</h1>'
+			templateUrl: 'app/user/index.html'
 		})
 
 		.state('roles', {
 			url: '/roles',
-			template: '<h1>Roles</h1>'
+			templateUrl: 'app/role/index.html'
 		})
 
 		.state('permissions', {
 			url: '/permissions',
-			template: '<h1>Permissions</h1>'
+			templateUrl: 'app/permission/index.html'
 		});
 	}
 ]);

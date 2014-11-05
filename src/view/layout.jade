@@ -35,11 +35,11 @@ html(ng-app='MyApp')
 
 			nav
 				ul
-					li.first(ui-sref-active='active'): a(ui-sref='accounts') Accounts
+					li.first(ui-sref-active='active'): a(ui-sref='users') Users
 					li(ui-sref-active='active'): a(ui-sref='roles') Roles
 					li(ui-sref-active='active'): a(ui-sref='permissions') Permissions
 
-			div(ui-view)
+			section.maincolumn(ui-view)
 
 			//
 				section.sidebar

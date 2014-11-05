@@ -1,7 +1,8 @@
 doctype html
-html
+html(ng-app='MyApp')
 	head
 		title Janux Authorization
+		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 
 		
@@ -10,6 +11,10 @@ html
 		link(rel='stylesheet', href='css/util.css')
 		link(rel='stylesheet', href='css/layout.css')
 		link(rel='stylesheet', href='css/responsive.css')
+
+		script(src='js/angular.js')
+		script(src='js/angular-ui-router.js')
+		script(src='js/app.js')
 
 	body
 		.container
@@ -30,22 +35,22 @@ html
 
 			nav
 				ul
-					li.first: a(href='#accounts') Accounts
-					li: a(href='#roles') Roles
-					li: a(href='#perms') Permissions
+					li.first(ui-sref-active='active'): a(ui-sref='accounts') Accounts
+					li(ui-sref-active='active'): a(ui-sref='roles') Roles
+					li(ui-sref-active='active'): a(ui-sref='permissions') Permissions
 
+			div(ui-view)
 
+			//
+				section.sidebar
 
+					block sidebar
+						include sidenav
 
-			section.sidebar
+				section.maincolumn
 
-				block sidebar
-					include sidenav
-
-			section.maincolumn
-
-				block main-content
-				block footer
-					include google-analytics
+					block main-content
+					block footer
+						include google-analytics
 
 // vim: set fo=rq wrap:

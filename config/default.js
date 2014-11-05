@@ -67,7 +67,9 @@ cfg.fileset.cssLibs = [
 
 // any javascript libs that need to be copied to dist/js
 cfg.fileset.jsLibs = [
-	path.join(cfg.dir.bower, 'jquery', 'dist', 'jquery.js')
+	path.join(cfg.dir.bower, 'jquery', 'dist', 'jquery.js'),
+	path.join(cfg.dir.bower, 'angular', 'angular.js'),
+	path.join(cfg.dir.bower, 'angular-ui-router', 'release', 'angular-ui-router.js')
 ];
 
 cfg.jade = {

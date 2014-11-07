@@ -5,7 +5,7 @@ var path = require('path');
 var cfg = {
 	dir: {
 		src:     'src',
-		bower:   'src/bower',
+		bower:   'bower',
 		css:     'css',
 		dist:    'dist',
 		img:     'img',

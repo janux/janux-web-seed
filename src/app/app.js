@@ -1,15 +1,23 @@
 'use strict';
 var angular = require('angular');
+
 require('angular-ui-router');
+require('common/security');
+
 
 angular.module('MyApp',[
-	'ui.router'
+	'ui.router',
+	'security'
 ])
 
-.run([    '$rootScope','$state','$stateParams',
-	function($rootScope , $state , $stateParams) {
+.run([    '$rootScope','$state','$stateParams', 'security',
+	function($rootScope , $state , $stateParams, security) {
 		$rootScope.$state = $state;
 		$rootScope.$stateParams = $stateParams;
+
+		// See if we can find an authenticated session
+		security.requestCurrentUser();
+		console.log('user', security.currentUser);
 	}
 ])
 

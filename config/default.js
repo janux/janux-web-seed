@@ -36,10 +36,10 @@ cfg.fileset.js = path.join(cfg.dir.src, cfg.dir.js, '**','*.js');
 cfg.fileset.watch = [
 	// path.join(cfg.dir.dist,'*.html'),
 	cfg.fileset.jade,
-	cfg.fileset.js,
 	path.join(cfg.dir.src, cfg.dir.css,'**','*.css'),
 	path.join(cfg.dir.src, cfg.dir.css,'**','*.less'),
-	path.join(cfg.dir.src, cfg.dir.img,'**','*')
+	path.join(cfg.dir.src, cfg.dir.img,'**','*'),
+	path.join(cfg.dir.dist, cfg.file.app)
 ]
 
 // these are relative to the 'src' folder, and get copied to the dist folder

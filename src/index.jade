@@ -1,4 +1,42 @@
-extends view/layout
+doctype html
+html(ng-app='MyApp')
+	head
+		title Janux Authorization
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
 
-block main-content
-	include view/home
+		
+		link(rel='stylesheet', href='#{cfg.dir.css}/normalize.css')
+		link(rel='stylesheet', href='#{cfg.dir.css}/typography.css')
+		link(rel='stylesheet', href='#{cfg.dir.css}/util.css')
+		link(rel='stylesheet', href='#{cfg.dir.css}/layout.css')
+		link(rel='stylesheet', href='#{cfg.dir.css}/responsive.css')
+
+		script(src='#{cfg.file.app}')
+
+	body
+		.container
+			header
+				.logo
+					img(src='img/janux-sage-256.png')
+					.branding
+						span.janux janux
+						span.people  people
+
+				.auth
+
+					.auth-status Logout 
+						span.entypo.entypo-logout
+
+					.auth-user Philippe Paravicini &nbsp;
+						span.entypo.entypo-down-open
+
+			nav
+				ul
+					li.first(ui-sref-active='active'): a(ui-sref='users') Users
+					li(ui-sref-active='active'): a(ui-sref='roles') Roles
+					li(ui-sref-active='active'): a(ui-sref='permissions') Permissions
+
+			section.maincolumn(ui-view)
+
+// vim: set fo=rq wrap:

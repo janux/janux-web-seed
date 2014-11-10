@@ -1,6 +1,6 @@
 'use strict';
-// jshint: 'angular' variable is global and immutable
-/* global angular: false */
+var angular = require('angular');
+require('angular-ui-router');
 
 angular.module('MyApp',[
 	'ui.router'

@@ -14,6 +14,9 @@ var cfg = {
 		partial: 'view',
 		test:    'test'
 	},
+	file: {
+		app: 'app.js'
+	},
 	fileset: {},
 }; 
 
@@ -43,7 +46,6 @@ cfg.fileset.watch = [
 cfg.fileset.assets = [
 	'favicon.ico',
 	path.join(cfg.dir.img,'**','*.*'),
-	path.join(cfg.dir.js, '**','*.js'),
 	path.join(cfg.dir.css,'font','**','*.*'),
 	path.join(cfg.dir.css,'icon','**','*.*'),
 	path.join('!**','*.less') 
@@ -85,7 +87,7 @@ cfg.jshint = {
 
 // the connect or other server config
 cfg.server = {
-	root: [cfg.dir.src, cfg.dir.dist],
+	root: [cfg.dir.dist],
 	port: 9000,
 	host: '0.0.0.0',
 	open: false,

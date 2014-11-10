@@ -21,6 +21,7 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
+		"browserify":            "^6.2.0",
 		"gulp":                  "^3.6.0",
 		"gulp-autoprefixer":     "^0.0.6",
 		"gulp-concat":           "^2.1.7",
@@ -34,8 +35,12 @@
 		"gulp-size":             "^0.1.3",
 		"gulp-util":             "^2.2.14",
 		"config":								 "^1.1.0",
-		"require-dir":           "^0.1.0",
+		"lodash":                "^2.4.1",
 		"sprintf":               "^0.1.3",
-		"lodash":                "^2.4.1"
+		"vinyl-source-stream":   "^1.0.0"
+	},
+	"browser": {
+		"angular":           "./vendor/angular.js",
+		"angular-ui-router": "./bower/angular-ui-router/release/angular-ui-router.js"
 	}
 }

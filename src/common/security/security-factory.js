@@ -7,6 +7,15 @@ function(   $http,  $q) {
 	// The public API
 	//
 	var service = {
+
+		showLogin: function() {
+			console.log('clicked on Login');
+		},
+
+		logout: function() {
+			console.log('clicked on Logout');
+		},
+
 		requestCurrentUser: function() {
 			if ( service.isAuthenticated() ) {
 				return $q.when(service.currentUser);
@@ -18,9 +27,15 @@ function(   $http,  $q) {
 			}
 		},
 
+		currentUser: null,
+
+		/*
 		currentUser: { 
-			name: 'quietsky'
+			name: 'quietsky',
+			firstName: 'Philippe',
+			lastName: 'Paravicini'
 		},
+		*/
 
 		isAuthenticated: function() {
 			return !!service.currentUser;

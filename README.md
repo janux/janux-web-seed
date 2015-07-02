@@ -2,7 +2,7 @@ Janux Web Seed
 --------------
 
 A seed project containing an html/css/js project that uses less.js, and
-semantic-grid, and pure-css.  Built using gulp.
+semantic-grid.  Built using gulp.
 
 Functionality is loosely based on the yeoman webapp project, but the directory structure
 is different.

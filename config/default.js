@@ -51,10 +51,8 @@ cfg.fileset.assets = [
 // The 'target' less files that will be transformed into corresponding css files;
 // included files are not in this set, and for 'watch' task we need all less files
 cfg.fileset.less = [
-	'typography.less',
-	//'util.less',
+	'responsive.less',
 	'layout.less',
-	//'responsive.less',
 	'main.less'
 ];
 

@@ -1,11 +1,9 @@
 {
   "name": "janux-web-seed",
-  "version": "0.0.1-SNAPSHOT",
+  "version": "0.0.2-SNAPSHOT",
   "dependencies": {
-    "jquery": "~2.1.1",
-    "normalize.css": "~3.0.0",
-    "pure": "~0.4.2",
-    "semantic-grid": "*",
-    "bootstrap": "3.3.6"
+    "bootstrap":     "3.3.6",
+    "jquery":        "2.1.1",
+    "semantic-grid": "*"
   }
 }

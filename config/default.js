@@ -13,7 +13,10 @@ var cfg = {
 		partial: 'view',
 		test:    'test'
 	},
-	fileset: {},
+	file: {
+		app: 'app.js'
+	},
+	fileset: {}
 }; 
 
 // the jade files to watch
@@ -24,9 +27,9 @@ cfg.fileset.jade = path.join(cfg.dir.src,'**','*.jade');
 cfg.fileset.html = [
 	path.join('**','*.jade'),
 	path.join('!**',cfg.dir.partial,'*')
-]
+];
 
-cfg.fileset.js = path.join(cfg.dir.src, cfg.dir.js, '**','*.js');
+cfg.fileset.js = path.join(cfg.dir.src, '**','*.js');
 
 // files watched during the build
 cfg.fileset.watch = [
@@ -36,13 +39,13 @@ cfg.fileset.watch = [
 	path.join(cfg.dir.src, cfg.dir.css,'**','*.css'),
 	path.join(cfg.dir.src, cfg.dir.css,'**','*.less'),
 	path.join(cfg.dir.src, cfg.dir.img,'**','*')
-]
+];
 
 // these are relative to the 'src' folder, and get copied to the dist folder
 cfg.fileset.assets = [
 	'favicon.ico',
 	path.join(cfg.dir.img,'**','*.*'),
-	path.join(cfg.dir.js, '**','*.*'),
+	// path.join(cfg.dir.js, '**','*.*'),
 	path.join(cfg.dir.css,'font','**','*.*'),
 	path.join(cfg.dir.css,'icon','**','*.*'),
 	path.join('!**','*.less') 
@@ -66,7 +69,7 @@ cfg.fileset.cssLibs = [
 
 // any javascript libs that need to be copied to dist/js
 cfg.fileset.jsLibs = [
-	path.join(cfg.dir.bower, 'jquery', 'dist', 'jquery.js')
+	// path.join(cfg.dir.bower, 'jquery', 'dist', 'jquery.js')
 ];
 
 cfg.jade = {
@@ -77,7 +80,7 @@ cfg.jade = {
 cfg.jshint = {
 	rcfile:   '.jshintrc',
 	reporter: 'default'
-}
+};
 
 // the connect or other server config
 cfg.server = {
@@ -85,8 +88,7 @@ cfg.server = {
 	port: 9000,
 	host: '0.0.0.0',
 	open: false,
-	livereload: false
+	livereload: true
 };
-
 
 module.exports = cfg;

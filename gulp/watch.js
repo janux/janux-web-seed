@@ -31,6 +31,9 @@ module.exports = function(gulp) {
 		gulp.watch( cfg.fileset.jade, ['jade']);
 
 		// Watch .js files
+		gulp.watch([
+			path.join(cfg.dir.src, '**','*.js')
+		], ['scripts','browserify']);
 		// gulp.watch('app/scripts/**/*.js', ['scripts']);
 		// gulp.watch( cfg.dir.js + '/**/*.js', ['scripts']);
 

@@ -20,9 +20,6 @@ module.exports = function(gulp) {
 
 		gulp.src(cfg.fileset.cssLibs)
 		.pipe(gulp.dest(path.join(cfg.dir.dist, cfg.dir.css)));
-
-		gulp.src(cfg.fileset.jsLibs)
-		.pipe( gulp.dest(path.join(cfg.dir.dist, cfg.dir.js)) );
 	});
 
 };

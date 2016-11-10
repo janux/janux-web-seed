@@ -13,7 +13,7 @@ var cfg = {
 		partial: 'view',
 		test:    'test'
 	},
-	fileset: {},
+	fileset: {}
 }; 
 
 // the jade files to watch
@@ -24,7 +24,7 @@ cfg.fileset.jade = path.join(cfg.dir.src,'**','*.jade');
 cfg.fileset.html = [
 	path.join('**','*.jade'),
 	path.join('!**',cfg.dir.partial,'*')
-]
+];
 
 cfg.fileset.js = path.join(cfg.dir.src, cfg.dir.js, '**','*.js');
 
@@ -36,7 +36,7 @@ cfg.fileset.watch = [
 	path.join(cfg.dir.src, cfg.dir.css,'**','*.css'),
 	path.join(cfg.dir.src, cfg.dir.css,'**','*.less'),
 	path.join(cfg.dir.src, cfg.dir.img,'**','*')
-]
+];
 
 // these are relative to the 'src' folder, and get copied to the dist folder
 cfg.fileset.assets = [
@@ -77,7 +77,7 @@ cfg.jade = {
 cfg.jshint = {
 	rcfile:   '.jshintrc',
 	reporter: 'default'
-}
+};
 
 // the connect or other server config
 cfg.server = {

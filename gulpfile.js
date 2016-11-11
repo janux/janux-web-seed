@@ -28,7 +28,7 @@ for (var filename in taskDir) {
 //
 // Process all assets for development
 //
-gulp.task('build', ['styles','jade','scripts','copy']);
+gulp.task('build', ['styles','pug','scripts','copy']);
 
 //
 // Does a clean dev build 

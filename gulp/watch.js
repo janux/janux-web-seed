@@ -28,7 +28,7 @@ module.exports = function(gulp) {
 		// Watch .less files
 		gulp.watch( cfg.fileset.lessSrc, ['styles']);
 
-		gulp.watch( cfg.fileset.jade, ['jade']);
+		gulp.watch( cfg.fileset.pug, ['pug']);
 
 		// Watch .js files
 		// gulp.watch('app/scripts/**/*.js', ['scripts']);

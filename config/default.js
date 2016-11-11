@@ -16,13 +16,13 @@ var cfg = {
 	fileset: {}
 }; 
 
-// the jade files to watch
-cfg.fileset.jade = path.join(cfg.dir.src,'**','*.jade');
+// the pug files to watch
+cfg.fileset.pug = path.join(cfg.dir.src,'**','*.pug');
 
-// the jade 'top-level' files that will be turned into html, excludes partials;
+// the pug 'top-level' files that will be turned into html, excludes partials;
 // relative to src folder
 cfg.fileset.html = [
-	path.join('**','*.jade'),
+	path.join('**','*.pug'),
 	path.join('!**',cfg.dir.partial,'*')
 ];
 
@@ -31,7 +31,7 @@ cfg.fileset.js = path.join(cfg.dir.src, cfg.dir.js, '**','*.js');
 // files watched during the build
 cfg.fileset.watch = [
 	// path.join(cfg.dir.dist,'*.html'),
-	cfg.fileset.jade,
+	cfg.fileset.pug,
 	cfg.fileset.js,
 	path.join(cfg.dir.src, cfg.dir.css,'**','*.css'),
 	path.join(cfg.dir.src, cfg.dir.css,'**','*.less'),
@@ -69,7 +69,7 @@ cfg.fileset.jsLibs = [
 	path.join(cfg.dir.bower, 'jquery', 'dist', 'jquery.js')
 ];
 
-cfg.jade = {
+cfg.pug = {
 	debug:  false,
 	pretty: true
 };

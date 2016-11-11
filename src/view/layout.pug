@@ -4,15 +4,15 @@ html
 		title Janux Web Seed
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 
-		link(rel='stylesheet', href='css/typography.css')
-		link(rel='stylesheet', href='css/layout.css')
-		link(rel='stylesheet', href='css/main.css')
+		link(rel='stylesheet', href=cfg.dir.css + '/typography.css')
+		link(rel='stylesheet', href=cfg.dir.css + '/layout.css')
+		link(rel='stylesheet', href=cfg.dir.css + '/main.css')
 
 	body
 		.container-fluid
 			header
 				.logo
-					img(src='img/janux-sage-256.png') 
+					img(src=cfg.dir.img + '/janux-sage-256.png')
 					.branding
 						span.janux janux 
 						span.people people

@@ -44,9 +44,10 @@
 		"lodash":                "2.4.2"
 	},
 	"browser": {
-	  "angular": "./bower/angular/angular.js",
-	  "angular-ui-router": "./bower/angular-ui-router/release/angular-ui-router.js",
-	  "jquery": "./bower/jquery/dist/jquery.js"
+	  "angular": 			"./bower/angular/angular.js",
+	  "angular-ui-router": 	"./bower/angular-ui-router/release/angular-ui-router.js",
+	  "jquery": 			"./bower/jquery/dist/jquery.js",
+	  "common/directives":  "./src/common/directives.js"
 	},
 	"browserify-shim": {
 	  "jquery": "$",

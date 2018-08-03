@@ -3,7 +3,7 @@
 var gulp   = require('gulp'),
   path     = require('path');
 
-if (!gulp.cfg) { 
+if (!gulp.cfg) {
 	gulp.cfg = require('config');
 } else {
 	// in the event that gulp decides to define a 'gulp.cfg' field
@@ -18,7 +18,7 @@ gulp.cfg.pkg = require('./package.json');
 gulp.plugins = require('gulp-load-plugins')();
 
 
-// Load all the tasks that are defined in the 'gulp' folder.  
+// Load all the tasks that are defined in the 'gulp' folder.
 var taskDir  = require('require-dir')('./gulp');
 
 for (var filename in taskDir) {
@@ -28,12 +28,12 @@ for (var filename in taskDir) {
 //
 // Process all assets for development
 //
-gulp.task('build', ['styles','pug','scripts','copy']);
+gulp.task('build', ['styles','pug','scripts','webpack','copy']);
 
 //
-// Does a clean dev build 
+// Does a clean dev build
 //
-// this ensures that 'clean' is run before build; otherwise, 
+// this ensures that 'clean' is run before build; otherwise,
 // both tasks run concurrently and errors may occur
 //
 gulp.task('build:clean', ['clean'], function() {

@@ -1,4 +1,14 @@
-extends view/layout
+doctype html
+html
+	head
+		title Janux Web Seed
+		meta(name='viewport', content='width=device-width, initial-scale=1')
 
-block main-content
-	include view/bootstrap-sample
+		link(rel='stylesheet', href=cfg.dir.css + '/typography.css')
+		link(rel='stylesheet', href=cfg.dir.css + '/layout.css')
+		link(rel='stylesheet', href=cfg.dir.css + '/main.css')
+
+	body
+		div#app
+		script(src="app.js")
+

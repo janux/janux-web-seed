@@ -6,7 +6,7 @@
 var path = require('path');
 
 module.exports = function(gulp) {
-	
+
 	var cfg = gulp.cfg;
 
 	gulp.task('watch:clean', ['clean'], function() {
@@ -24,7 +24,7 @@ module.exports = function(gulp) {
 		// gulp.watch( 'dist/**/*', function(event) {
 		//		console.log('event: ', event);
 		// });
-		
+
 		// Watch .less files
 		gulp.watch( cfg.fileset.lessSrc, ['styles']);
 
@@ -32,7 +32,7 @@ module.exports = function(gulp) {
 
 		// Watch .js files
 		// gulp.watch('app/scripts/**/*.js', ['scripts']);
-		// gulp.watch( cfg.dir.js + '/**/*.js', ['scripts']);
+		gulp.watch( cfg.fileset.js, ['scripts', 'webpack']);
 
 		// Watch image files
 		// gulp.watch('app/images/**/*', ['images']);

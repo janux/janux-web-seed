@@ -1,4 +1,88 @@
-extends view/layout
+// extends view/layout
 
-block main-content
+// block main-content
 	include view/bootstrap-sample
+
+doctype html
+html
+	head
+		title Janux Web Seed
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		link(rel='stylesheet', href=cfg.dir.css + '/typography.css')
+		link(rel='stylesheet', href=cfg.dir.css + '/layout.css')
+		//link(rel='stylesheet', href=cfg.dir.css + '/main.css')
+
+	body
+		header
+			.container
+				a(href='#')
+					img.logo(src='./img/logoeasytitle24.png')
+				nav
+					ul
+						li
+							a(href='#') My Projects
+						li
+							a(href='#') Edit Active Project
+						li
+							a(href='#') My Account
+						li
+							a(href='#') Services
+						li
+							a(href='#') Resources
+						li
+							a(href='#') Contact Us
+		.submenu
+			nav.sub_menu
+				ul.menu_secundary
+					li
+						a(href='#') Do-It-Yourself
+					li
+						a(href='#') Ful Service Consulting
+		section#showcase
+			.container
+				h1 Accurate, Fast & Economical Title 24
+				p Compliance Solutions for Building Designers, Owners and Contractors
+				button.button_1(type='submit') Create New Project
+		section#doityourself
+			.container
+				.box_text_1
+						h3 Do-it-Yourself Residential Title 24
+						p Save time and money by entering information about your design into our convenient "take-off" tool.
+						p Get your Title 24 Report at a deep discount, and pay yourself the difference! Start Now!
+						button.button_2(type='submit') Read More
+				.box_img_1
+					img(src='./img/laptop.png')
+		section#fullserviceconsulting
+			.container
+				.box_img_2
+					img(src='./img/planocasa.png')
+					.box_text_2
+							h3 Full Service Consulting
+							p Just want to get it done quickly, at a reasonable price, with a minimum of fuss?
+							p In here you can find out what information to send and how to send it. CAD drawings happily accepted by e-mail or through our upload link.
+							button.button_2-2(type='submit') Read More
+		footer
+		.footer-container
+			.footer-main
+				.footer-colum
+					h4 Services
+					p Do-It-Yourself
+					p Full Service Consulting
+				.footer-colum
+					h4 Quick Links
+					p My Projects
+					p Edit Active Project
+					p My Account
+				.footer-colum
+					h4 Resources
+					p FAQ
+					p Ful Service Quote
+					p Customer Service
+				.footer-colum
+					h4 Contact Us
+					p (415) 259-4068
+					p customer.service@easytitle24.com
+					p 654 Oakland Av. Oakland 94611 California, USA
+		#final_footer
+					p Copyright © 2018 EasyTitle24.com

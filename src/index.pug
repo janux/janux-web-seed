@@ -18,7 +18,71 @@ html
 			.container
 				a(href='#')
 					img.logo(src='./img/logoeasytitle24.png')
-				nav
+				nav.main-menu
+					ul
+						li
+							a.active(href='#') My Projects
+						li
+							a(href='#') Edit Active Project
+						li
+							a(href='#') My Account
+						li
+							a(href='#') Services
+
+							nav.services-options
+								ul
+									li
+										a(href='#') Do-It-Yourself
+									li
+										a(href='#') Ful Service Consulting
+						li
+							a(href='#') Resources
+						li
+							a(href='#') Contact Us
+				span.icon-menu.fa.fa-bars
+				input(type='checkbox')
+		.submenu
+			nav.sub-menu
+				ul.menu-secundary
+					li
+						a(href='#') Do-It-Yourself
+					li
+						a(href='#') Ful Service Consulting
+		section.showcase
+			.container
+				h1 Accurate, Fast & Economical Title 24
+				p Compliance Solutions for Building Designers, Owners and Contractors
+				button.button-1(type='submit') Create New Project
+		section.doityourself
+			.container
+				.box-text-1
+						h3 Do-it-Yourself Residential Title 24
+						p Save time and money by entering information about your design into our convenient "take-off" tool.
+						p Get your Title 24 Report at a deep discount, and pay yourself the difference! Start Now!
+						button.button-2(type='submit') Read More
+				.box-img-1
+					img(src='./img/laptop.png')
+		section.fullserviceconsulting
+			.container
+				.box-img-2
+					img(src='./img/planocasa.png')
+					.box-text-2
+							h3 Full Service Consulting
+							p Just want to get it done quickly, at a reasonable price, with a minimum of fuss?
+							p In here you can find out what information to send and how to send it. CAD drawings happily accepted by e-mail or through our upload link.
+							button.button-2-2(type='submit') Read More
+		footer
+		.footer-container
+			.footer-main
+				.footer-colum
+					h4 Services
+					ul
+						li
+							a(href='#') Do-It-Yourself
+						li
+							a(href='#') Full Service Consulting
+				.footer-colum
+					h4 Quick Links
 					ul
 						li
 							a(href='#') My Projects
@@ -26,63 +90,19 @@ html
 							a(href='#') Edit Active Project
 						li
 							a(href='#') My Account
-						li
-							a(href='#') Services
-						li
-							a(href='#') Resources
-						li
-							a(href='#') Contact Us
-		.submenu
-			nav.sub_menu
-				ul.menu_secundary
-					li
-						a(href='#') Do-It-Yourself
-					li
-						a(href='#') Ful Service Consulting
-		section#showcase
-			.container
-				h1 Accurate, Fast & Economical Title 24
-				p Compliance Solutions for Building Designers, Owners and Contractors
-				button.button_1(type='submit') Create New Project
-		section#doityourself
-			.container
-				.box_text_1
-						h3 Do-it-Yourself Residential Title 24
-						p Save time and money by entering information about your design into our convenient "take-off" tool.
-						p Get your Title 24 Report at a deep discount, and pay yourself the difference! Start Now!
-						button.button_2(type='submit') Read More
-				.box_img_1
-					img(src='./img/laptop.png')
-		section#fullserviceconsulting
-			.container
-				.box_img_2
-					img(src='./img/planocasa.png')
-					.box_text_2
-							h3 Full Service Consulting
-							p Just want to get it done quickly, at a reasonable price, with a minimum of fuss?
-							p In here you can find out what information to send and how to send it. CAD drawings happily accepted by e-mail or through our upload link.
-							button.button_2-2(type='submit') Read More
-		footer
-		.footer-container
-			.footer-main
-				.footer-colum
-					h4 Services
-					p Do-It-Yourself
-					p Full Service Consulting
-				.footer-colum
-					h4 Quick Links
-					p My Projects
-					p Edit Active Project
-					p My Account
 				.footer-colum
 					h4 Resources
-					p FAQ
-					p Ful Service Quote
-					p Customer Service
+					ul
+						li
+							a(href='#') FAQ
+						li
+							a(href='#') Ful Service Quote
+						li
+							a(href='#') Customer Service
 				.footer-colum
 					h4 Contact Us
 					p (415) 259-4068
-					p customer.service@easytitle24.com
+					a(href='#') customer.service@easytitle24.com
 					p 654 Oakland Av. Oakland 94611 California, USA
-		#final_footer
-					p Copyright © 2018 EasyTitle24.com
+		#final-footer
+					p Copyright © 2018 EasyTitle24.com			

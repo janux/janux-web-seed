@@ -1,6 +1,8 @@
 @import "semantic-grid/stylesheets/less/grid.less"; // from bower
 @import "mixin";
 @import "variable";
+@import "responsive";
+@import "font-awesome";
 
 body{
 	font-family: 'MyriadPro-Regular';
@@ -24,6 +26,7 @@ ul{
 
 /* header logo + menu */
 header{
+	height: 60px;
 	background: @grey1;
 }
 
@@ -37,8 +40,19 @@ header::after{
 	float: left;
 }
 
-nav{
+nav.main-menu{
 	float: right;
+
+	.medium-device-and-down({
+	display: none;
+	position: absolute;
+	width: 100%;
+	padding-bottom: 10px;
+	top: 60px; 
+	left: 0;
+	z-index: 1000;
+	background: @grey3;
+	});
 }
 
 nav ul{
@@ -53,7 +67,35 @@ nav li{
 	padding-top: 20px;
 
 	position: relative;
+	
+	.medium-device-and-down({display: list-item;});
 }
+
+span.icon-menu {
+	.rem(font-size, 14);
+	display: none;
+	position: absolute;
+	top: 18px; 
+	right: 45px;
+	color: @green;
+	opacity: 1;
+
+	.medium-device-and-down({display: block;});
+}
+
+// checkbox opacity//
+input[type=checkbox] ~ span.icon-menu {
+  color: blue;
+  font-style: italic;
+  opacity: 1;
+} 
+
+input[type=checkbox]:checked ~ span.icon-menu {
+  color: blue;
+  font-style: normal;
+  opacity: .5;
+} 
+
 
 nav a{
 	color: @black;
@@ -73,42 +115,74 @@ nav a::before{
 	width: 0%;
 
 	transition: all ease-in-out 250ms;
+
+	.medium-device-and-down({height: 0;});
 }
 
 nav a:hover::before{
 	width: 100%;
 }
 
+nav a:hover {
+	.medium-device-and-down({
+	font-weight: bold;
+	color: @green; 
+	});
+}
+
+nav a.active{
+	.medium-device-and-down({
+	font-weight: bold;
+	color: @green;
+	});
+
+	font-weight: bold;
+	color: @black;
+}
+
+nav.services-options{
+	display: none;
+
+	.medium-device-and-down({display: block;});
+}
+
+nav.services-options ul{
+
+	.medium-device-and-down({display: list-item;});
+}
+
+
+
 /* submenu */
-.sub_menu{
+.sub-menu{
 	border-bottom: 3px solid @green;
   	background:@grey2;
 	display: block;
 	margin: 0px auto;
 	width: 100%;
 	height: 45px;
-  
 }
-.sub_menu ul{
+
+.sub-menu ul{
 	text-align: center;
 	overflow:auto;
  
   
 }
-.sub_menu ul li{ 
+.sub-menu ul li{ 
 	display:inline;
 	line-height:3;
   
 }
 
-.sub_menu a{
+.sub-menu a{
 	font-family: 'MyriadPro-Semibold';
 	padding:20px;
 	color: @white;
 	text-decoration: none;
 }
 
-.menu_secundary a:hover{
+.menu-secundary a:hover{
 	background: @green;
 	-webkit-transition:all 500ms ease;
 	-o-transition: all 500ms ease;
@@ -116,26 +190,38 @@ nav a:hover::before{
 }
 
 /* showcase */
-#showcase{
+.showcase{
 	min-height: 350px;
 	background: url('../img/header_home.png') no-repeat 0 -350px;
 	text-align: left;
 	color: @white;
 }
 
-#showcase h1{
+.showcase h1{
 	height: 10px;
 	margin-top: 80px;
 	font-size: 35px;
 	padding-bottom: 5px;
+
+	.medium-device-and-down({
+	margin-top: 70px;
+	display: block;
+	line-height: 1;
+	});
 }
 
-#showcase p{
+.showcase p{
 	padding-top: 5px;
 	font-size: 20px;
+
+	.medium-device-and-down({
+	margin-top: 60px;
+	display: block;
+	line-height: 1.3;
+	});
 }
 
-#showcase .button_1{
+.showcase .button-1{
 	height: 35px;
 	border: none;
 	background: @green;
@@ -146,7 +232,7 @@ nav a:hover::before{
 	padding: 0 20px 0 20px;
 }
 
-#showcase .button_1:hover{
+.showcase .button-1:hover{
 	color: @white;
 	background: @blue;
 	-webkit-transition:all 500ms ease;
@@ -156,36 +242,58 @@ nav a:hover::before{
 
 
 /* do-it-yourser */
-#doityourself{
+.doityourself{
 	padding: 20px 0 20px 0;
 	background-color: @green;
+
+	.medium-device-and-down({
+	display: block;
+	line-height: 1.3;
+	});
+
 }
 
-.box_text_1{
+.box-text-1{
 	float: left;
 	width: 50%;
 	text-align: center;
+
+	.medium-device-and-down({
+	display: block;
+	width: 100%;
+	});
 }
 
-.box_text_1 h3{
+.box-text-1 h3{
 	color: @white;
 	font-family: 'MyriadPro-Semibold';
 	font-size: 26px;
+
+	.medium-device-and-down({
+	display: block;});
 }
 
-.box_text_1 p{
+.box-text-1 p{
 	color: @white;
 	font-family: 'MyriadPro-Regular';
-	font-size: 16px;
+	font-size: 18px;
+
+	.medium-device-and-down({
+	display: block;});
 }
 
-.box_img_1 img{
+.box-img-1 img{
 	padding-top: 20px;
 	float: right;
 	width: 50%;
+
+	.medium-device-and-down({
+	display: block;
+	width: 100%;
+	}); 
 }
 
-.button_2{
+.button-2{
 	height: 30px;
 	border: none;
 	background: @white;
@@ -196,7 +304,7 @@ nav a:hover::before{
 	padding: 0 15px 0 15px;
 }
 
-#doityourself .button_2:hover{
+.doityourself .button-2:hover{
 	color: @white;
 	background: @blue;
 	-webkit-transition:all 500ms ease;
@@ -205,36 +313,57 @@ nav a:hover::before{
 }
 
 /* full service consulting */
-#fullserviceconsulting{
+.fullserviceconsulting{
 	padding: 20px 0 20px 0;
 	background-color: @white;
+
+	.medium-device-and-down({
+	display: block;
+	line-height: 1.3;
+	});
 }
 
-.box_text_2{
+.box-text-2{
 	float: right;
 	width: 50%;
 	text-align: center;
+
+	.medium-device-and-down({
+	display: block;
+	width: 100%;
+	});
 }
 
-.box_text_2 h3{
+.box-text-2 h3{
 	color: @green;
 	font-family: 'MyriadPro-Semibold';
 	font-size: 26px;
+
+	.medium-device-and-down({
+	display: block;});
 }
 
-.box_text_2 p{
+.box-text-2 p{
 	color: @black;
 	font-family: 'MyriadPro-Regular';
-	font-size: 16px;
+	font-size: 18px;
+
+	.medium-device-and-down({
+	display: block;});
 }
 
-.box_img_2 img{
+.box-img-2 img{
 	padding-top: 20px;
 	float: left;
 	width: 50%;
+
+	.medium-device-and-down({
+	display: block;
+	width: 100%;
+	}); 
 }
 
-.button_2-2{
+.button-2-2{
 	height: 30px;
 	border: none;
 	background: @green;
@@ -245,7 +374,7 @@ nav a:hover::before{
 	padding: 0 15px 0 15px;
 }
 
-#fullserviceconsulting .button_2-2:hover{
+.fullserviceconsulting .button-2-2:hover{
 	color: @white;
 	background: @blue;
 	-webkit-transition:all 500ms ease;
@@ -261,26 +390,49 @@ nav a:hover::before{
 }
 
 .footer-main{
-	width: 98%;
+	width: 88%;
 	max-width: 1000px;
 	margin: auto;
-	padding-top: 10px;
+	padding-top: 5px;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.footer-main .footer-colum{
-	width: calc(100% / 4);
-	text-align: left;
+.footer-colum ul{
+	list-style: none;
+	line-height: 2;
 }
 
-#final_footer{
+.footer-colum a{
+	color: @black;
+	text-decoration: none;
+	font-size: 16px;
+
+}
+
+.footer-main .footer-colum{
+	width: calc(85% / 4);
+	text-align: left;
+
+	.medium-device-and-down({
+	display: block;
+	padding-left: 40px;
+	text-align: left;
+	width: 100%;
+	}); 
+}
+
+.footer-colum{
+	padding-left: 20px;
+}
+
+#final-footer{
 	padding-top: 1px;
 	height: 40px;
 	background-color: @blue;
 }
 
-#final_footer p{
+#final-footer p{
 	padding-top: 0px;
 	color: @white;
 	text-align: center;

@@ -44,14 +44,7 @@ nav.main-menu{
 	float: right;
 
 	.medium-device-and-down({
-	display: none;
-	position: absolute;
-	width: 100%;
-	padding-bottom: 10px;
-	top: 60px; 
-	left: 0;
-	z-index: 1000;
-	background: @grey3;
+		display: none;
 	});
 }
 
@@ -67,7 +60,7 @@ nav li{
 	padding-top: 20px;
 
 	position: relative;
-	
+
 	.medium-device-and-down({display: list-item;});
 }
 
@@ -75,7 +68,7 @@ span.icon-menu {
 	.rem(font-size, 14);
 	display: none;
 	position: absolute;
-	top: 18px; 
+	top: 18px;
 	right: 45px;
 	color: @green;
 	opacity: 1;
@@ -83,19 +76,31 @@ span.icon-menu {
 	.medium-device-and-down({display: block;});
 }
 
-// checkbox opacity//
-input[type=checkbox] ~ span.icon-menu {
-  color: blue;
-  font-style: italic;
-  opacity: 1;
-} 
+.collapse {
+	position: absolute;
+	top: 15px;
+	right: 40px;
+	z-index: 1000;
+	opacity: 0;
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+}
 
-input[type=checkbox]:checked ~ span.icon-menu {
-  color: blue;
-  font-style: normal;
-  opacity: .5;
-} 
+.collapse:checked + span.icon-menu {
+	opacity: 0.5;
+}
 
+.collapse:checked ~ nav.main-menu {
+	position: absolute;
+	width: 100%;
+	padding-bottom: 10px;
+	top: 60px;
+	left: 0;
+	z-index: 1000;
+	background: @grey3;
+	display: block;
+}
 
 nav a{
 	color: @black;
@@ -126,7 +131,7 @@ nav a:hover::before{
 nav a:hover {
 	.medium-device-and-down({
 	font-weight: bold;
-	color: @green; 
+	color: @green;
 	});
 }
 
@@ -166,13 +171,13 @@ nav.services-options ul{
 .sub-menu ul{
 	text-align: center;
 	overflow:auto;
- 
-  
+
+
 }
-.sub-menu ul li{ 
+.sub-menu ul li{
 	display:inline;
 	line-height:3;
-  
+
 }
 
 .sub-menu a{
@@ -290,7 +295,7 @@ nav.services-options ul{
 	.medium-device-and-down({
 	display: block;
 	width: 100%;
-	}); 
+	});
 }
 
 .button-2{
@@ -360,7 +365,7 @@ nav.services-options ul{
 	.medium-device-and-down({
 	display: block;
 	width: 100%;
-	}); 
+	});
 }
 
 .button-2-2{
@@ -419,7 +424,7 @@ nav.services-options ul{
 	padding-left: 40px;
 	text-align: left;
 	width: 100%;
-	}); 
+	});
 }
 
 .footer-colum{

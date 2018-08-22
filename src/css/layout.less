@@ -3,10 +3,10 @@
 @import "variable";
 @import "responsive";
 @import "font-awesome";
+@import "typography";
 
 body{
-	font-family: 'MyriadPro-Regular';
-	font-size: 15px;
+	font-family: @font-myriadpro;
 	line-height: 1.5;
 	padding: 0;
 	margin: 0;
@@ -65,7 +65,7 @@ nav li{
 }
 
 span.icon-menu {
-	.rem(font-size, 14);
+	.rem(font-size, 22);
 	display: none;
 	position: absolute;
 	top: 18px;
@@ -181,7 +181,7 @@ nav.services-options ul{
 }
 
 .sub-menu a{
-	font-family: 'MyriadPro-Semibold';
+	font-family: @font-myriadpro-semibold;
 	padding:20px;
 	color: @white;
 	text-decoration: none;
@@ -192,6 +192,7 @@ nav.services-options ul{
 	-webkit-transition:all 500ms ease;
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
+	color: @white;
 }
 
 /* showcase */
@@ -231,7 +232,7 @@ nav.services-options ul{
 	border: none;
 	background: @green;
 	color: @white;
-	font-family: 'MyriadPro-Bold';
+	font-family: @font-myriadpro-bold;
 	letter-spacing: 1px;
 	font-size: 14px;
 	padding: 0 20px 0 20px;
@@ -271,7 +272,7 @@ nav.services-options ul{
 
 .box-text-1 h3{
 	color: @white;
-	font-family: 'MyriadPro-Semibold';
+	font-family: @font-myriadpro-semibold;
 	font-size: 26px;
 
 	.medium-device-and-down({
@@ -280,7 +281,7 @@ nav.services-options ul{
 
 .box-text-1 p{
 	color: @white;
-	font-family: 'MyriadPro-Regular';
+	font-family: @font-myriadpro;
 	font-size: 18px;
 
 	.medium-device-and-down({
@@ -303,7 +304,7 @@ nav.services-options ul{
 	border: none;
 	background: @white;
 	color: @green;
-	font-family: 'MyriadPro-Bold';
+	font-family: @font-myriadpro-bold;
 	letter-spacing: 1px;
 	font-size: 14px;
 	padding: 0 15px 0 15px;
@@ -341,7 +342,7 @@ nav.services-options ul{
 
 .box-text-2 h3{
 	color: @green;
-	font-family: 'MyriadPro-Semibold';
+	font-family: @font-myriadpro-semibold;
 	font-size: 26px;
 
 	.medium-device-and-down({
@@ -350,7 +351,7 @@ nav.services-options ul{
 
 .box-text-2 p{
 	color: @black;
-	font-family: 'MyriadPro-Regular';
+	font-family: @font-myriadpro;
 	font-size: 18px;
 
 	.medium-device-and-down({
@@ -373,7 +374,7 @@ nav.services-options ul{
 	border: none;
 	background: @green;
 	color: @white;
-	font-family: 'MyriadPro-Bold';
+	font-family: @font-myriadpro-bold;
 	letter-spacing: 1px;
 	font-size: 14px;
 	padding: 0 15px 0 15px;

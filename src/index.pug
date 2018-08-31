@@ -1,55 +1,13 @@
-// extends view/layout
-
-// block main-content
-	include view/bootstrap-sample
-
 doctype html
 html
 	head
 		title Janux Web Seed
 		meta(name='viewport', content='width=device-width, initial-scale=1')
-
 		link(rel='stylesheet', href=cfg.dir.css + '/typography.css')
 		link(rel='stylesheet', href=cfg.dir.css + '/layout.css')
-		//link(rel='stylesheet', href=cfg.dir.css + '/main.css')
 
 	body
-		header
-			.container
-				a(href='#')
-					img.logo(src='./img/logoeasytitle24.png')
-
-				input.collapse(type='checkbox')
-				span.icon-menu.fa.fa-bars
-
-				nav.main-menu
-					ul
-						li
-							a.active(href='#') My Projects
-						li
-							a(href='#') Edit Active Project
-						li
-							a(href='#') My Account
-						li
-							a(href='#') Services
-
-							nav.services-options
-								ul
-									li
-										a(href='#') Do-It-Yourself
-									li
-										a(href='#') Ful Service Consulting
-						li
-							a(href='#') Resources
-						li
-							a(href='#') Contact Us
-		.submenu
-			nav.sub-menu
-				ul.menu-secundary
-					li
-						a(href='#') Do-It-Yourself
-					li
-						a(href='#') Ful Service Consulting
+		include header
 		section.showcase
 			.container
 				h1 Accurate, Fast & Economical Title 24
@@ -73,38 +31,4 @@ html
 							p Just want to get it done quickly, at a reasonable price, with a minimum of fuss?
 							p In here you can find out what information to send and how to send it. CAD drawings happily accepted by e-mail or through our upload link.
 							button.button-2-2(type='submit') Read More
-		footer
-		.footer-container
-			.footer-main
-				.footer-colum
-					h4 Services
-					ul
-						li
-							a(href='#') Do-It-Yourself
-						li
-							a(href='#') Full Service Consulting
-				.footer-colum
-					h4 Quick Links
-					ul
-						li
-							a(href='#') My Projects
-						li
-							a(href='#') Edit Active Project
-						li
-							a(href='#') My Account
-				.footer-colum
-					h4 Resources
-					ul
-						li
-							a(href='#') FAQ
-						li
-							a(href='#') Ful Service Quote
-						li
-							a(href='#') Customer Service
-				.footer-colum
-					h4 Contact Us
-					p (415) 259-4068
-					a(href='#') customer.service@easytitle24.com
-					p 654 Oakland Av. Oakland 94611 California, USA
-		#final-footer
-					p Copyright © 2018 EasyTitle24.com			
+		include footer

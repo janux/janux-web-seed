@@ -4,6 +4,9 @@
 .font-face('Base9_SmallCaps');
 // @import url('http://fonts.googleapis.com/css?family=Radley:400,400italic');
 
+.font-face('Montserrat');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+
 .woff-font(OpenSans, normal, normal, @font-path, OpenSans-Regular);
 .woff-font(OpenSans, normal, italic, @font-path, OpenSans-Italic);
 .woff-font(OpenSans, bold,   normal, @font-path, OpenSans-Bold);
@@ -21,14 +24,22 @@
 .woff-font(DroidSerif, bold,   normal, @font-path, DroidSerif-Bold);
 .woff-font(DroidSerif, bold,   italic, @font-path, DroidSerif-BoldItalic);
 
+.woff-font(MyriadPro, normal, 	normal, @font-path, MyriadPro-Regular);
+.woff-font(MyriadPro, normal, 	italic, @font-path, MyriadPro-It);
+.woff-font(MyriadPro, bold,   	normal, @font-path, MyriadPro-Bold);
+.woff-font(MyriadPro, bold,   	italic, @font-path, MyriadPro-BoldIt);
+.woff-font(MyriadPro, semibold, normal, @font-path, MyriadPro-Semibold);
+
 @font-sans:  'OpenSans';
 @font-serif: 'DroidSerif';
-
+@font-myriadpro: 'MyriadPro-Regular';
+@font-myriadpro-bold: 'MyriadPro-Bold';
+@font-myriadpro-semibold: 'MyriadPro-Semibold';
 
 html {
 	//
 	// causes 1 rem = 10px
-  //
+  	//
 	// that is: a root em to be equal to 10px on all browsers in which:
 	//
 	// font-size: 100% yields a screen font size of 16px,
@@ -40,8 +51,6 @@ html {
 }
 
 body {
-	font-family: @font-sans, sans-serif;
-
 	//
 	// This yields the css line:
 	//
@@ -51,69 +60,4 @@ body {
 	// see http://snook.ca/archives/html_and_css/font-size-with-rem
 	//
 	.rem(font-size, 16);
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: @font-sans, sans-serif;
-}
-
-h1 {
-	.rem(font-size, 26);
-	text-transform: uppercase;
-	font-weight: 800;
-}
-
-h2 {
-	.rem(font-size, 24);
-	font-weight: bold;
-}	
-
-h3 {
-	.rem(font-size, 22);
-	font-weight: 600;
-}	
-
-p, li {
-	line-height: 150%;
-	.rem(margin-bottom, 16);
-}
-
-.light {
-	font-family: @font-sans;
-	font-weight: 300;
-}
-
-.auth {
-}
-
-.auth-status {
-	font-variant: small-caps;
-	text-transform: lowercase;
-	.rem(font-size, 18);
-	.rem(letter-spacing, 1);
-	font-weight: 600;
-	color: @sageDark;
-}
-
-.auth-user {
-	.rem(font-size, 14);
-	color: @grey1;
-}
-
-nav {
-	a, a:link, a:visited, a:hover {
-		.rem(font-size, 15);
-		font-weight: 600;
-		color: white;
-	 	text-decoration: none;
-	}
-}
-
-
-.branding {
-	font-family: Base9_SmallCaps;
-	font-weight:normal;
-	.rem(font-size, 24);
-	.rem(letter-spacing, 2.4);
-	text-align:left;
 }

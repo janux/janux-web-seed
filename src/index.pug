@@ -1,4 +1,132 @@
-extends view/layout
+doctype html
+html
+	head
+		title Burst Ultimate
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='stylesheet', href=cfg.dir.css + '/typography.css')
+		link(rel='stylesheet', href=cfg.dir.css + '/layout.css')
 
-block main-content
-	include view/bootstrap-sample
+	body
+		// include header
+		section.header
+			.container
+				.box-text-header
+					.box-logo
+						img(src='./img/logo_burst-01.png')
+						h3 Still looking for your Sport?
+						p Try Ultimate Disk (Frisbee)
+							input(type='email', placeholder='Enter your mail...')
+						button.button-2(type='submit') KEEP ME INFORMED
+				.box-img-header
+					img(src='./img/header.png')
+		
+		section.team
+			.container
+				h1 A non-contact, co-ed sport played with a plastic disk that will make it fun to get in the best shape of your life.
+		
+		section.practice
+			.container
+				.box-text-practice
+						h3 PRACTICE
+						.hr-practice
+						p • Wednesdays at 2:00 pm
+						p • Fridays at 3:00 pm
+						P • Saturday at 9:45 am (optional)
+						p For more information email:
+						a.link-mail(href='#') cghsburst@gmail.com
+				.box-img-practice
+					img(src='./img/practice.png')
+
+		section.fun
+			.container
+				.box-text-fun
+						h3 FUN AND AEROBIC
+						.hr-fun
+						p Ultimate Disk is played 7 vs 7 on a football sized field, and involves passing the disk until you score in the opponent’s endzone. It involves throwing and catching a plastic disk (frisbee), and as much running as soccer or lacrosse.
+						p You don’t need to be a great player to get a lot of running, and become fit while having fun.
+
+		section.coed
+			.container
+				.box-text-coed
+						h3 CO-ED, NON-CONTACT
+						.hr-coed
+						p Ultimate Disk is a non-contact sport. Any non-incidental contact by the defense while catching or throwing the disk is a foul.
+						P As a result, there is a very low risk of concussions in the game, and it is an ideal game for everyone, youth, women, strapping adults and week-end warriors. 
+				.box-img-coed
+					img(src='./img/coed.png')
+
+		section.make
+			.container
+				.box-text-make
+						h3 MAKE FRIENDS FOR LIFE
+						.hr-make
+						p The relationships that you create on the field can last a lifetime. Being on a team can help lessen the challenges of getting to a new school or a new place.
+						p Because of the welcoming culture of Ultimate Disk, it will also create an inmediate connection to ultimate teams and pick-up games all over the country, and many nations around the world.
+
+		section.aff
+			.container
+				.box-text-aff
+						h3 AFFORDABLE
+						.hr-aff
+						p Ultimate Disk requires very little equipment: a plastic disk ($15-20) and an optional pair of cleats (recommended).
+						p Ultimate can be played barefoot on grass fields or on sand, and can be played on regular soccer, football or park fields.
+						p End zones are marked with cones, or, in a pinch, shoes, backpacks, flags, sticks, or whatever you can use to mark a goal line.
+
+		section.ascompetitve
+			.container
+				.box-img-ascompetitve
+					img(src='./img/ascompetitive.png')
+				.box-text-ascompetitve
+						h3 AS COMPETITIVE AS YOU WANT TO MAKE IT, OR NOT
+						.hr-ascompetitve
+						p Ultimate Disk is played by people of all ages, at levels ranging from chill recreational pick-up games to  competitive amateur and professional clubs competing at the national and world levels in Men, Women, and Co-Ed divisions.
+						p The Ultimate Disk Association that promotes the sport is particularly interested in introducing more girls and women to the game.
+
+		section.spirit
+			.container
+				.box-text-spirit
+						h3 SPIRIT OF THE GAME
+						.hr-spirit
+						p Ultimate Disk is ruled by an honor code called Spirit of The Game, whereby players call their own fouls and plays.
+						p Competition and winning may never supersede earning the respect of your opponents by showing Spirit.
+						p This is one of the most special virtues of the Ultimate culture, and what makes it so welcoming to people of all walks of life and ages.
+
+		section.captains
+			.container
+				.box-text-caps
+						h3 CAPTAINS
+						.hr-caps
+				.caps
+					.colum
+						img(src='./img/caps.png')
+						h3 CAP
+						p Lorem ipsum dolor sit amet, vel at stet copiosae, ut dico mutat pertinacia sit. Atqui omnesque in nam. Est fugit fuisset dissentiunt an, scripta omittam necessitatibus mei ex
+					.colum
+						img(src='./img/caps.png')
+						h3 CAP
+						p Lorem ipsum dolor sit amet, vel at stet copiosae, ut dico mutat pertinacia sit. Atqui omnesque in nam. Est fugit fuisset dissentiunt an, scripta omittam necessitatibus mei ex
+					.colum
+						img(src='./img/caps.png')
+						h3 CAP
+						p Lorem ipsum dolor sit amet, vel at stet copiosae, ut dico mutat pertinacia sit. Atqui omnesque in nam. Est fugit fuisset dissentiunt an, scripta omittam necessitatibus mei ex
+
+		section.coaches
+			.container
+				.box-text-caps
+						h3 COACHES
+						.hr-caps
+				.caps
+					.colum
+						img(src='./img/philippe.png')
+						h3 PHILIPPE PARAVICINI
+						p Lorem ipsum dolor sit amet, vel at stet copiosae, ut dico mutat pertinacia sit. Atqui omnesque in nam. Est fugit fuisset dissentiunt an, scripta omittam necessitatibus mei ex
+					.colum
+						img(src='./img/caps.png')
+						h3 COACH 2
+						p Lorem ipsum dolor sit amet, vel at stet copiosae, ut dico mutat pertinacia sit. Atqui omnesque in nam. Est fugit fuisset dissentiunt an, scripta omittam necessitatibus mei ex
+
+		section.yup
+			.container
+				img(src='./img/yup_2.png')
+				
+		include footer

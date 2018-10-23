@@ -2,8 +2,10 @@
   "name": "janux-web-seed",
   "version": "0.0.1-SNAPSHOT",
   "dependencies": {
-    "jquery":           "2.1.4",
-    "semantic-grid":    "*",
-    "bootstrap":        "3.3.7"
+    "jquery": "2.1.4",
+    "semantic-grid": "*",
+    "bootstrap": "3.3.7",
+    "components-font-awesome": "^5.0.6",
+    "font-awesome": "^5.4.1"
   }
 }
